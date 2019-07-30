@@ -5,7 +5,7 @@ main:
   - title: "Category"
     url: /categories/
   - title: "Resource"
-    url: https://github.com/swhaKo/RCRS-deep-learning
+    url: /resource/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
