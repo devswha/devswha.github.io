@@ -4,7 +4,6 @@ classes: wide
 title: "RoboCup Rescue Simulation with Deep Learning"
 permalink: /resources/Intro/
 read_time: true
-#excerpt: "RoboCup Rescue Simulation with Deep Learning"
 toc: false
 ---
 
