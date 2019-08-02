@@ -3,45 +3,20 @@ main:
   - title: "About"
     url: /about/
   - title: "Resources"
-    url: /resources/
+    url: /resources/Intro/
 
 resources:
   - title: RCRS with Deep Learning
     children:
-      - title: "RoboCup Rescue Simulation (RCRS)"
-        url: /docs/quick-start-guide/
+      - title: "RoboCup Rescue Simulation"
+        url: /resources/RCRS/
       - title: "Scenario Generator"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
+        url: /resources/Scenario_Generator/
 
-  - title: Treasure
+  - title: Chicago Crime Location Pediction
     children:
       - title: "Configuration"
         url: /docs/configuration/
-      - title: "Navigation"
-        url: /docs/navigation/
-      - title: "UI Text"
-        url: /docs/ui-text/
-      - title: "Authors"
-        url: /docs/authors/
-      - title: "Layouts"
-        url: /docs/layouts/
-
-  - title: Content
-    children:
-      - title: "Working with Posts"
-        url: /docs/posts/
-      - title: "Working with Pages"
-        url: /docs/pages/
-      - title: "Working with Collections"
-        url: /docs/collections/
-      - title: "Helpers"
-        url: /docs/helpers/
-      - title: "Utility Classes"
-        url: /docs/utility-classes/
 
   - title: Extras
     children:
