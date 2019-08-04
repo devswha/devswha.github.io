@@ -10,6 +10,7 @@ toc: false
 
 ![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/RCRS.png)
 
+  
 In a disaster scenario, a fire starts at certain buildings, and some randomly selected buildings collapse and create debris. A fire cause injury and the debris cause the interference of movement of the rescue team. And scenario progress a unit of time called time step and the time step progresses, the fire spreads and people move. In the simulation, there are two groups of people: rescue teams and civilians. The rescue team consists of firefighters, police and emergency teams. The firefighters are responsible for firefighting, police removing debris from buildings, and emergency teams for transporting the injured civilians to shelters. Each rescue crew can communicate within a certain range, and according to the competition participants' disaster response plans and policies, rescue crew are moved. In RCRS, there are civilians in the disaster zone random location. And as the disaster progresses, the building collapses or fires cause injured civilians. Therefore, we predict the location of hidden injured civilians in RCRS. And the civilians have information called Health Point (HP) that shows how much they are injured status. Due to the disaster situation in simulators, likes fires spread or buildings collapse, civilians' HP going to lower. We set the HP threshold which determines the civilians is injured or not. If one civilian' HP lower than this threshold, we determine this civilian is injured.
 {: style="text-align: justify;"}
 
