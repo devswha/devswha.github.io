@@ -6,7 +6,6 @@ permalink: /resources/Image_ML/
 read_time: true
 toc: false
 ---
-# Image_based Machine Learning Model
 To predict the density of injured civilian in RCRS using image-based data, we train the machine learning model using simulation screenshot images. We consider that all frames of video clip in disaster situations are independent images. Therefore, we choose one frame randomly in images sequence of a disaster scenario in RCRS to train the machine learning model. The model's inputs are simulated images created from RCRS. And CNN extracts images features, fully-connected layer output the number of injured people vectors in each grid cell.
 
 ![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/Image_ML.png)

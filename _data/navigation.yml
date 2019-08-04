@@ -12,9 +12,9 @@ resources:
         url: /resources/RCRS/
       - title: "Scenario Generator"
         url: /resources/Scenario_Generator/
-      - title: "Image-based Machine Learning Model"
+      - title: "Image-based ML Model"
         url: /resources/Image_ML/
-      - title: "Video-based Machine Learning Model"
+      - title: "Video-based ML Model"
         url: /resources/Video_ML/
 
   - title: Chicago Crime Location Pediction
