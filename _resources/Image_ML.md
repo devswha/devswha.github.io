@@ -8,7 +8,7 @@ toc: false
 ---
 To predict the density of injured civilian in RCRS using image-based data, we train the machine learning model using simulation screenshot images. We consider that all frames of video clip in disaster situations are independent images. Therefore, we choose one frame randomly in images sequence of a disaster scenario in RCRS to train the machine learning model. The model's inputs are simulated images created from RCRS. And CNN extracts images features, fully-connected layer output the number of injured people vectors in each grid cell.
 
-![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/Image_ML.png)
+![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/Image_ML.png){: .align-center}
 
 In this study, we research the method of enhancing the performance of the machine learning model to predict the number of injured civilians in RCRS. And we evaluate the prediction performance of the different machine learning model to find the best performance of the machine learning model. To enhance the performance of the machine learning model, first, we find the best CNN model to extract the images feature. Second, we expect to see better performance by applying the attention mechanism to best CNN model found in the first step. Finally, we apply our own data augmentation method to simulation data set for training machine learning model.
 
