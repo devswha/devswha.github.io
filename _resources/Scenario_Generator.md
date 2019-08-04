@@ -12,20 +12,17 @@ We developed a scenario generator to train the machine running model. In deep le
 Our scenario generator run as follows: (1) Input the setting of scenario (i.e., the number of civilians and fires, location of the rescue team, etc.) and the number of scenarios to create; and (2) The generator automatically runs the scenario on RCRS; and (3) As the simulation runs, the generator automatically parses the screenshot image data and text data (i.e., the number of injured civilians, rescue team location, etc.)
 
 ## 1. Software Pre-Requisites
-
 - Git
 - OpenJDK Java 8+
 
 ## 2. Download project from GitHub and decompress RCRS
-
 ```bash
-
 $ git clone https://github.com/swhaKo/RCRS-deep-learning.git
 $ cd RCRS-deep-learning/
 $ unzip RCRS.zip
 ```
-## 3. Configuration
 
+## 3. Configuration
 In this repository, there is configuration file called "config.txt". You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.  
 
 ### Map data constant
@@ -49,16 +46,13 @@ TEST_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map dat
 
 ## 4. Execute
 ```bash
-
 $ python3 train_data_generator.py [Map Name]
 $ python3 test_data_generator.py [Map Name]
 ```
 
 ## 5. Map List
-
 - Kobe
 - Joao
 
 ## 6. Download Link
-
 [Robocup Rescue Simulation Scenario Generator GitHub Page](https://github.com/swhaKo/Scenario_Generator)
