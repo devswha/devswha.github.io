@@ -18,6 +18,11 @@ resources:
         url: /resources/Image_ML/
       - title: "Video-based ML Model"
         url: /resources/Video_ML/
+      - title: "Attention Module"
+        url: /resources/Video_ML/
+      - title: "Feature Highlight Data Augmentation"
+        url: /resources/Video_ML/
+
 
   - title: Other Domain
     children:

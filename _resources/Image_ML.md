@@ -10,26 +10,22 @@ To predict the density of injured civilian in RCRS using image-based data, we tr
 
 ![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/Image_ML.png){: .align-center}
 
-In this study, we research the method of enhancing the performance of the machine learning model to predict the number of injured civilians in RCRS. And we evaluate the prediction performance of the different machine learning model to find the best performance of the machine learning model. To enhance the performance of the machine learning model, first, we find the best CNN model to extract the images feature. Second, we expect to see better performance by applying the attention mechanism to best CNN model found in the first step. Finally, we apply our own data augmentation method to simulation data set for training machine learning model.
+
 
 ## 1. Software Pre-Requisites
 - TensorFlow 1.12.0
 - Keras 2.2.4
 
+
+## 2. Download project from GitHub and decompress RCRS
+```bash
+$ git clone https://github.com/swhaKo/Scenario_Generator.git
+$ cd RCRS-deep-learning/
+$ unzip RCRS.zip
+```
+
 ## 2. Configuration
 In this repository, there is configuration file called "config.txt". You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.  
-
-### Map data constant
-NUM_OF_CIVILIANS: The number of civilians in the simulation map  
-NUM_OF_FIRES: The number of initial fire buildings  
-LIMIT_TIME_STEP: The start point of disaster scenario time step to save image dataset.  
-LIMIT_CIVILIAN_HP: The treshold of civilians' HP point which determine civilian is injured or not
-
-### Train and test data constant
-TRAIN_START_MAP_NUM: The map data start number for training  
-TRAIN_END_MAP_NUM: The map data end number for training  
-TEST_START_MAP_NUM: The map data start number for testing  
-TEST_END_MAP_NUM: The map data end number for testing  
 
 ### Directory data constant
 DATASET_DIR: The path of data set directory  

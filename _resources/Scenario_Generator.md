@@ -52,6 +52,8 @@ When you execute the Scenario Generator you can see the automatically run the tw
 
 ![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/Screenshot.png){: .align-center}
 
+
+
 ## 5. Map List
 For `[Map Directory Name]`, only scenarios within the `[Scenario Generator Directory]/RCRS/baseMap]` directory are possible. If there are any scenarios you want, they should be moved to that directory. In our program, we provide the following scenario samples:
 - Kobe
