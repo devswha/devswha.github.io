@@ -39,6 +39,14 @@ TEST_GENERATED_MAP_DIR: The path of the source of simulation map data for testin
 TEST_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map data for testing  
 
 ## 4. Execute
+
+
+Label the generated disaster scenarios data
+```bash
+$ python3 ScenarioLabel_train.py [Map Name]
+$ python3 ScenarioLabel_test.py [Map Name]
+```
+
 ```bash
 $ python3 train_data_generator.py [Map Name]
 $ python3 test_data_generator.py [Map Name]

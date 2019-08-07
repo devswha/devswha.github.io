@@ -19,7 +19,7 @@ Our scenario generator run as follows:
 
 ## 2. Download project from GitHub and decompress RCRS
 ```bash
-$ git clone https://github.com/swhaKo/RCRS-deep-learning.git
+$ git clone https://github.com/swhaKo/Scenario_Generator.git
 $ cd RCRS-deep-learning/
 $ unzip RCRS.zip
 ```
@@ -31,7 +31,7 @@ In this repository, there is configuration file called "config.txt". You can mod
 NUM_OF_CIVILIANS: The number of civilians in the simulation map  
 NUM_OF_FIRES: The number of initial fire buildings  
 LIMIT_TIME_STEP: The start point of disaster scenario time step to save image dataset.  
-LIMIT_CIVILIAN_HP: The treshold of civilians' HP point which determine civilian is injured or not
+LIMIT_CIVILIAN_HP: The threshold of civilians' HP point which determine civilian is injured or not
 
 ### Train and test data constant
 TRAIN_START_MAP_NUM: The map data start number for training  
@@ -41,24 +41,19 @@ TEST_END_MAP_NUM: The map data end number for testing
 
 ### Directory data constant
 DATASET_DIR: The path of data set directory  
-TRAIN_GENERATED_MAP_DIR: The path of the source of simulation map data for training  
-TRAIN_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map data for training  
-TEST_GENERATED_MAP_DIR: The path of the source of simulation map data for testing  
-TEST_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map data for testing  
 
 ## 4. Execute
-Generate the disaster scenarios on RCRS
+After write the configuration file, you should generate the disaster scenarios on RCRS
 ```bash
 $ python3 ScenarioGen_train.py [Map Name]
 $ python3 ScenarioGen_test.py [Map Name]
 ```
-Label the generated disaster scenarios data
-```bash
-$ python3 ScenarioLabel_train.py [Map Name]
-$ python3 ScenarioLabel_test.py [Map Name]
-```
+When you execute the Scenario Generator you can see the automatically run the two terminal and simulator. The simulation viewer that is displayed on the full screen can be closed. One of the terminals run as a server. Server terminal shows the setting of the scenario initially and how much scenario creation is in progress. And the other terminal s a client. Client terminal runs the RCRS and sends simulation data to the server. After finish to run one scenario, it is automatically closed and run the next scenario. This server-client run locally, and it is similar to the official RCRS. If you want to know the detail, please refer to the official RCRS homepage. The screenshot of Scenario Generator is the figure as below:
+
+![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/Screenshot.png){: .align-center}
 
 ## 5. Map List
+For `[Map Directory Name]`, only scenarios within the `[Scenario Generator Directory]/RCRS/baseMap]` directory are possible. If there are any scenarios you want, they should be moved to that directory. In our program, we provide the following scenario samples:
 - Kobe
 - Joao
 
