@@ -19,4 +19,5 @@ Furthermore, you can use the example map of RCRS which used in the competition o
 
 
 ## Setting the parameter of the scenarios
+In the scenario directory, you can see the `config` and `map` directory.
 
