@@ -1,7 +1,7 @@
 ---
 layout: single
 classes: wide
-title: "Image_based Machine Learning Model"
+title: "Image based Machine Learning Model"
 permalink: /resources/Image_ML/
 read_time: true
 toc: false
@@ -13,17 +13,10 @@ To predict the density of injured civilian in RCRS using image-based data, we tr
 In this study, we research the method of enhancing the performance of the machine learning model to predict the number of injured civilians in RCRS. And we evaluate the prediction performance of the different machine learning model to find the best performance of the machine learning model. To enhance the performance of the machine learning model, first, we find the best CNN model to extract the images feature. Second, we expect to see better performance by applying the attention mechanism to best CNN model found in the first step. Finally, we apply our own data augmentation method to simulation data set for training machine learning model.
 
 ## 1. Software Pre-Requisites
-- TensorFlow 1.14
-- Keras 2.3.0
+- TensorFlow 1.12.0
+- Keras 2.2.4
 
-## 2. Download project from GitHub and decompress RCRS
-```bash
-$ git clone https://github.com/swhaKo/RCRS-deep-learning.git
-$ cd RCRS-deep-learning/
-$ unzip RCRS.zip
-```
-
-## 3. Configuration
+## 2. Configuration
 In this repository, there is configuration file called "config.txt". You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.  
 
 ### Map data constant

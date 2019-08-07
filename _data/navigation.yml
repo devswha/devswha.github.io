@@ -10,6 +10,8 @@ resources:
     children:
       - title: "RoboCup Rescue Simulation"
         url: /resources/RCRS/
+      - title: "Create the RCRS Scenario"
+        url: /resources/Create_Scenario/
       - title: "Scenario Generator"
         url: /resources/Scenario_Generator/
       - title: "Image-based ML Model"
@@ -17,10 +19,12 @@ resources:
       - title: "Video-based ML Model"
         url: /resources/Video_ML/
 
-  - title: Chicago Crime Location Pediction
+  - title: Other Domain
     children:
-      - title: "Configuration"
-        url: /docs/configuration/
+      - title: "Chicago Crime Location Prediction"
+        url: /resources/Chicago/
+      - title: "RSNA Pneumonia Detection Challenge"
+        url: /resources/RSNA/
 
   - title: Extras
     children:

@@ -9,19 +9,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Scenario Generator - Wellcome to Sangwoo Ha Project Page!</title>
-<meta name="description" content="Scenario Generator">
+<!-- begin _includes/seo.html --><title>Robocup Rescue Simulation Scenario Generator - Wellcome to Sangwoo Ha Project Page!</title>
+<meta name="description" content="We developed a scenario generator to train the machine running model. In deep learning with image processing, it takes a lot of image data to train the machine learning model. And it takes a lot of work to generate this amount of data by a human. Therefore, we have developed a scenario generator that automatically generates simulated image data. The detail about The RoboCup Rescue Simulation (RCRS) and our project, see this page.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Wellcome to Sangwoo Ha Project Page!">
-<meta property="og:title" content="Scenario Generator">
+<meta property="og:title" content="Robocup Rescue Simulation Scenario Generator">
 <meta property="og:url" content="http://localhost:4000/swha/resources/Scenario_Generator/">
 
 
-  <meta property="og:description" content="Scenario Generator">
+  <meta property="og:description" content="We developed a scenario generator to train the machine running model. In deep learning with image processing, it takes a lot of image data to train the machine learning model. And it takes a lot of work to generate this amount of data by a human. Therefore, we have developed a scenario generator that automatically generates simulated image data. The detail about The RoboCup Rescue Simulation (RCRS) and our project, see this page.">
 
 
 
@@ -29,7 +29,7 @@
 
 
 
-  <meta property="article:published_time" content="2019-08-02T16:55:07+09:00">
+  <meta property="article:published_time" content="2019-08-07T15:47:16+09:00">
 
 
 
@@ -104,7 +104,7 @@
 
   </head>
 
-  <body class="layout--single">
+  <body class="layout--single wide">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -193,7 +193,31 @@
             
             
 
+            <li><a href="/swha/resources/Create_Scenario/" class="">Create the RCRS Scenario</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="/swha/resources/Scenario_Generator/" class="active">Scenario Generator</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/swha/resources/Image_ML/" class="">Image-based ML Model</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/swha/resources/Video_ML/" class="">Video-based ML Model</a></li>
           
         </ul>
         
@@ -201,7 +225,7 @@
     
       <li>
         
-          <span class="nav__sub-title">Chicago Crime Location Pediction</span>
+          <span class="nav__sub-title">Other Domain</span>
         
 
         
@@ -213,7 +237,15 @@
             
             
 
-            <li><a href="/swha/docs/configuration/" class="">Configuration</a></li>
+            <li><a href="/swha/resources/Chicago/" class="">Chicago Crime Location Prediction</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/swha/resources/RSNA/" class="">RSNA Pneumonia Detection Challenge</a></li>
           
         </ul>
         
@@ -255,30 +287,91 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Scenario Generator">
-    <meta itemprop="description" content="Scenario Generator">
+    <meta itemprop="headline" content="Robocup Rescue Simulation Scenario Generator">
+    <meta itemprop="description" content="We developed a scenario generator to train the machine running model. In deep learning with image processing, it takes a lot of image data to train the machine learning model. And it takes a lot of work to generate this amount of data by a human. Therefore, we have developed a scenario generator that automatically generates simulated image data. The detail about The RoboCup Rescue Simulation (RCRS) and our project, see this page.">
     
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Scenario Generator
+          <h1 id="page-title" class="page__title" itemprop="headline">Robocup Rescue Simulation Scenario Generator
 </h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
           
         </header>
       
 
       <section class="page__content" itemprop="text">
         
-          <aside class="sidebar__right ">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              
-            </nav>
-          </aside>
-        
-        
+        <p>We developed a scenario generator to train the machine running model. In deep learning with image processing, it takes a lot of image data to train the machine learning model. And it takes a lot of work to generate this amount of data by a human. Therefore, we have developed a scenario generator that automatically generates simulated image data. The detail about <a href="https://rescuesim.robocup.org/">The RoboCup Rescue Simulation (RCRS)</a> and our project, see this <a href="https://swhako.github.io/swha/resources/Intro/">page</a>.</p>
+
+<p>Our scenario generator run as follows:</p>
+<ol>
+  <li>Input the setting of scenario (i.e., the number of civilians and fires, location of the rescue team, etc.), the number of scenarios to create and the size of grid to divide into.</li>
+  <li>The generator automatically label by the grid and runs the scenario on RCRS</li>
+  <li>As the simulation runs, the generator automatically parses the screenshot image data and text data (i.e., the number of injured civilians, rescue team location, etc.)</li>
+</ol>
+
+<h2 id="1-software-pre-requisites">1. Software Pre-Requisites</h2>
+<ul>
+  <li>Git</li>
+  <li>OpenJDK Java 8+</li>
+</ul>
+
+<h2 id="2-download-project-from-github-and-decompress-rcrs">2. Download project from GitHub and decompress RCRS</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/swhaKo/RCRS-deep-learning.git
+<span class="nv">$ </span><span class="nb">cd </span>RCRS-deep-learning/
+<span class="nv">$ </span>unzip RCRS.zip
+</code></pre></div></div>
+
+<h2 id="3-configuration">3. Configuration</h2>
+<p>In this repository, there is configuration file called “config.txt”. You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.</p>
+
+<h3 id="map-data-constant">Map data constant</h3>
+<p>NUM_OF_CIVILIANS: The number of civilians in the simulation map<br />
+NUM_OF_FIRES: The number of initial fire buildings<br />
+LIMIT_TIME_STEP: The start point of disaster scenario time step to save image dataset.<br />
+LIMIT_CIVILIAN_HP: The treshold of civilians’ HP point which determine civilian is injured or not</p>
+
+<h3 id="train-and-test-data-constant">Train and test data constant</h3>
+<p>TRAIN_START_MAP_NUM: The map data start number for training<br />
+TRAIN_END_MAP_NUM: The map data end number for training<br />
+TEST_START_MAP_NUM: The map data start number for testing<br />
+TEST_END_MAP_NUM: The map data end number for testing</p>
+
+<h3 id="directory-data-constant">Directory data constant</h3>
+<p>DATASET_DIR: The path of data set directory<br />
+TRAIN_GENERATED_MAP_DIR: The path of the source of simulation map data for training<br />
+TRAIN_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map data for training<br />
+TEST_GENERATED_MAP_DIR: The path of the source of simulation map data for testing<br />
+TEST_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map data for testing</p>
+
+<h2 id="4-execute">4. Execute</h2>
+<p>Generate the disaster scenarios on RCRS</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 ScenarioGen_train.py <span class="o">[</span>Map Name]
+<span class="nv">$ </span>python3 ScenarioGen_test.py <span class="o">[</span>Map Name]
+</code></pre></div></div>
+<p>Label the generated disaster scenarios data</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 ScenarioLabel_train.py <span class="o">[</span>Map Name]
+<span class="nv">$ </span>python3 ScenarioLabel_test.py <span class="o">[</span>Map Name]
+</code></pre></div></div>
+
+<h2 id="5-map-list">5. Map List</h2>
+<ul>
+  <li>Kobe</li>
+  <li>Joao</li>
+</ul>
+
+<h2 id="6-download-link">6. Download Link</h2>
+<p><a href="https://github.com/swhaKo/Scenario_Generator">Robocup Rescue Simulation Scenario Generator GitHub Page</a></p>
 
         
       </section>
@@ -296,11 +389,11 @@
       
   <nav class="pagination">
     
-      <a href="/swha/resources/RCRS/" class="pagination--pager" title="RoboCup Rescue Simulation (RCRS)
+      <a href="/swha/resources/RSNA/" class="pagination--pager" title="RSNA Pneumonia Detection Challenge
 ">Previous</a>
     
     
-      <a href="/swha/resources/" class="pagination--pager" title="Resources
+      <a href="/swha/resources/Video_ML/" class="pagination--pager" title="Video based Machine Learning Model
 ">Next</a>
     
   </nav>
