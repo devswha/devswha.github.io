@@ -18,9 +18,7 @@ To predict the density of injured civilian in RCRS using image-based data, we tr
 
 ## 2. Download project from GitHub and decompress RCRS
 ```bash
-$ git clone https://github.com/swhaKo/Scenario_Generator.git
-$ cd RCRS-deep-learning/
-$ unzip RCRS.zip
+$ git clone https://github.com/swhaKo/Image-based-ML-Model.git
 ```
 
 ## 2. Configuration
@@ -47,4 +45,4 @@ $ python3 test_data_generator.py [Map Name]
 ```
 
 ## 6. Download Link
-[Robocup Rescue Simulation Scenario Generator GitHub Page](https://github.com/swhaKo/Scenario_Generator)
+[Image-based Machine Learning Model with RCRS GitHub Page](https://github.com/swhaKo/Image-based-ML-Model)
