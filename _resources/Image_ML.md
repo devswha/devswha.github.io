@@ -11,7 +11,6 @@ To predict the density of injured civilian in RCRS using image-based data, we tr
 ![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/Image_ML.png){: .align-center}
 
 
-
 ## 1. Software Pre-Requisites
 - TensorFlow 1.12.0
 - Keras 2.2.4
@@ -36,7 +35,6 @@ TEST_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map dat
 
 ## 4. Execute
 
-
 Label the generated disaster scenarios data
 ```bash
 $ python3 ScenarioLabel_train.py [Map Name]
@@ -47,10 +45,6 @@ $ python3 ScenarioLabel_test.py [Map Name]
 $ python3 train_data_generator.py [Map Name]
 $ python3 test_data_generator.py [Map Name]
 ```
-
-## 5. Map List
-- Kobe
-- Joao
 
 ## 6. Download Link
 [Robocup Rescue Simulation Scenario Generator GitHub Page](https://github.com/swhaKo/Scenario_Generator)

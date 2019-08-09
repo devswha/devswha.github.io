@@ -19,9 +19,9 @@ resources:
       - title: "Video-based ML Model"
         url: /resources/Video_ML/
       - title: "Attention Module"
-        url: /resources/Video_ML/
+        url: /resources/Attention/
       - title: "Feature Highlight Data Augmentation"
-        url: /resources/Video_ML/
+        url: /resources/Augmentation/
 
 
   - title: Other Domain
