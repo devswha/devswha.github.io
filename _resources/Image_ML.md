@@ -10,6 +10,10 @@ To predict the density of injured civilian in RCRS using image-based data, we tr
 
 ![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/Image_ML.png){: .align-center}
 
+1. Label the data created Scenario Generator
+2. Convert the data labeled in the first step to image data
+3. Train the machine learning model with data converted in the second step. 
+
 
 ## 1. Software Pre-Requisites
 - TensorFlow 1.12.0
