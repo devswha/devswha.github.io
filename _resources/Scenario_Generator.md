@@ -30,8 +30,7 @@ In this repository, there is configuration file called "config.txt". You can mod
 ### Map data constant
 NUM_OF_CIVILIANS: The number of civilians in the simulation map  
 NUM_OF_FIRES: The number of initial fire buildings  
-LIMIT_TIME_STEP: The start point of disaster scenario time step to save image dataset.  
-LIMIT_CIVILIAN_HP: The threshold of civilians' HP point which determine civilian is injured or not
+FH_DATA_AUG: Whether to create the scenario using [Feature-Hightlight data augmentation](https://swhako.github.io/swha/resources/Augmentation/)
 
 ### Train and test data constant
 TRAIN_START_MAP_NUM: The map data start number for training  
