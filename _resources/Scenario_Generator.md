@@ -10,7 +10,7 @@ We developed a scenario generator to train the machine running model. In deep le
 
 Our scenario generator run as follows:
 1. Input the setting of scenario (i.e., the number of civilians and fires, location of the rescue team, etc.), the number of scenarios to create and the size of grid to divide into.
-2. The generator automatically label by the grid and runs the scenario on RCRS
+2. Write the configuration file and choose whether use [Feature-Hightlight data augmentation](https://swhako.github.io/swha/resources/Augmentation/) or not.
 3. As the simulation runs, the generator automatically parses the screenshot image data and text data (i.e., the number of injured civilians, rescue team location, etc.)
 
 ## 1. Software Pre-Requisites
@@ -25,21 +25,19 @@ $ unzip RCRS.zip
 ```
 
 ## 3. Configuration
-In this repository, there is configuration file called "config.txt". You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.  
+In this repository, there is configuration file called *config.txt*. You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.  
 
-### Map data constant
+### Constant of Scenario
 NUM_OF_CIVILIANS: The number of civilians in the simulation map  
 NUM_OF_FIRES: The number of initial fire buildings  
 FH_DATA_AUG: Whether to create the scenario using [Feature-Hightlight data augmentation](https://swhako.github.io/swha/resources/Augmentation/)
 
-### Train and test data constant
+### Constant of train and test to ML model
 TRAIN_START_MAP_NUM: The map data start number for training  
 TRAIN_END_MAP_NUM: The map data end number for training  
 TEST_START_MAP_NUM: The map data start number for testing  
 TEST_END_MAP_NUM: The map data end number for testing  
-
-### Directory data constant
-DATASET_DIR: The path of data set directory  
+DATASET_DIR: The path of data set directory to save
 
 ## 4. Execute
 After write the configuration file, you should generate the disaster scenarios on RCRS
@@ -94,7 +92,7 @@ For `[Map Directory Name]`, only scenarios within the `[Scenario Generator Direc
             * config
             * map
           * ...
-            * ... 
+            * ...
     * test
       * generated_image
         * ...

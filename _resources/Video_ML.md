@@ -16,21 +16,42 @@ In predict the density of injured civilian in RCRS using video-based data, we tr
 - TensorFlow 1.12.0
 - Keras 2.2.4
 
-
 ## 2. Download project from GitHub and decompress RCRS
 ```bash
 $ git clone https://github.com/swhaKo/Video-based-ML-with-RCRS.git
 ```
 
 ## 2. Configuration
-In this repository, there is configuration file called "config.txt". You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.  
+In this repository, there is configuration file called *config_video.txt*. You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.  
 
-### Directory data constant
-DATASET_DIR: The path of data set directory  
-TRAIN_GENERATED_MAP_DIR: The path of the source of simulation map data for training  
-TRAIN_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map data for training  
-TEST_GENERATED_MAP_DIR: The path of the source of simulation map data for testing  
-TEST_GENERATED_IMAGE_DIR: The path of the screenshot image of simulation map data for testing  
+### Constant of label the data
+LIMIT_TIME_STEP: The start point of disaster scenario time step to save image dataset.  
+LIMIT_CIVILIAN_HP: The threshold of civilians' HP point which determine civilian is injured or not
+LABEL_TRAIN_START_MAP_NUM: The map data start number for training to label
+LABEL_TRAIN_END_MAP_NUM: The map data end number for training  to label
+LABEL_TEST_START_MAP_NUM: The map data start number for testing to label
+LABEL_TEST_END_MAP_NUM: The map data end number for testing to label
+LABEL_DATASET_DIR: The path of scenario directory to label
+
+### Constant to convert the data
+CONVERT_TRAIN_START_MAP_NUM: The map data start number for training to convert
+CONVERT_TRAIN_END_MAP_NUM: The map data end number for training to convert
+CONVERT_TEST_START_MAP_NUM: The map data start number for testing to convert
+CONVERT_TEST_END_MAP_NUM: The map data end number for testing to convert
+CONVERT_DATASET_DIR: The path of scenario directory to convert
+
+### Constant to train and test the ML model
+MODEL_TRAIN_START_MAP_NUM: The map data start number for training
+MODEL_TRAIN_END_MAP_NUM: The map data end number for training
+MODEL_TEST_START_MAP_NUM: The map data start number for testing
+MODEL_TEST_END_MAP_NUM: The map data end number for testing
+MODEL_DATASET_DIR: The path of scenario directory to train and test
+MODELS_DIR: The path of machine learning model to save
+RESULTS_DIR: The path of result to save
+
+## 3. Label the density of injured civilians to scenario
+We use the machine learning model to predict the location of the injured. And predict the exact location of injured civilians requires considerable computational resources and complexity, so that we divide the simulation map into grid and predict the density of the injured people in each grid cell. This can significantly shorten computational resources, complexity and the time required for training. Furthermore, we expected that the accuracy of the prediction of the injured civilians location will also be increased.
+
 
 ## 4. Execute
 
