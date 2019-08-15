@@ -58,5 +58,56 @@ For `[Map Directory Name]`, only scenarios within the `[Scenario Generator Direc
 - Kobe
 - Joao
 
-## 6. Download Link
+
+## 6. Structure
+* Dataset directory
+  * raw
+    * train
+      * generated_image
+        * map_name
+          * map_name_1
+            * Image
+            * Image-CiviliansView
+            * Label
+            * Parse
+          * map_name_2
+            * Image
+            * Image-CiviliansView
+            * Label
+            * Parse
+          * map_name 3
+            * Image
+            * Image-CiviliansView
+            * Label
+            * Parse
+          * ...
+            * ...
+      * generated_map
+        * map_name
+          * map_name_1
+            * config
+            * map
+          * map_name_2
+            * config
+            * map
+          * map_name_3
+            * config
+            * map
+          * ...
+            * ... 
+    * test
+      * generated_image
+        * ...
+      * generated_map
+        * ...
+
+In the scenario directory which created by the generator, there is *raw* directory. In the *raw* directory, there are *train* and *test* directories and each directory contains *generated_image* and *generated_map* directories. In each directory, you can see that there are as many scenarios created by the directory in the scenario name. In the *generated_image* and *generated_map* of scenario directory, there are four directories and each directory use as follows:
+
+* Image: the simulation of screenshot *png* image files.
+* Image-CviliansView: the simulation of screenshot *png* image files which show the location of civilians as green dot.
+* Label: the label file of scenario.
+* Parse: the parsed data of simulation which related to injured civilians location.
+
+
+## 7. Download Link
 [Robocup Rescue Simulation Scenario Generator GitHub Page](https://github.com/swhaKo/Scenario_Generator)
