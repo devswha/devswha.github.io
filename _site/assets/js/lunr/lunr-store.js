@@ -4,6 +4,16 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/swha/resource/test/",
         "teaser":null},{
+        "title": "Attention Module",
+        "excerpt":"Apart from the CNN model of depth, width, and cardinality factors, we investigate a different aspect of the CNN architecture design, attention. The significance of attention has been studied extensively in the previous literature. Our goal is to increase the focus image feature power of CNN by using attention mechanism:...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/swha/resources/Attention/",
+        "teaser":null},{
+        "title": "Feature Highlight Data Augmentation",
+        "excerpt":"In deep learning with image processing, the deep learning model train images according to the feature of images. And the accuracy of deep learning model is affected by whether the model trains the feature of images well. Therefore, this study proposes the data augmentation method to help the model training...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/swha/resources/Augmentation/",
+        "teaser":null},{
         "title": "Chicago Crime Location Prediction",
         "excerpt":" ","categories": [],
         "tags": [],
@@ -40,7 +50,7 @@ var store = [{
         "url": "http://localhost:4000/swha/resources/Scenario_Generator/",
         "teaser":null},{
         "title": "Video based Machine Learning Model",
-        "excerpt":" ","categories": [],
+        "excerpt":"In predict the density of injured civilian in RCRS using video-based data, we train the machine learning model using simulation screenshot image sequence. We consider that all frames of video clip are used for training. Therefore, we choose nine frames randomly in images sequence of disaster scenario in RCRS to...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/swha/resources/Video_ML/",
         "teaser":null},{
