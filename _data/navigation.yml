@@ -20,7 +20,7 @@ resources:
         url: /resources/Video_ML/
       - title: "Attention Module"
         url: /resources/Attention/
-      - title: "Feature Highlight Data Augmentation"
+      - title: "FH Data Augmentation"
         url: /resources/Augmentation/
 
 
