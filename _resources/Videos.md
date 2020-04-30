@@ -1,8 +1,8 @@
 ---
 layout: single
 classes: wide
-title: "RSNA Pneumonia Detection Challenge"
-permalink: /resources/RSNA/
+title: "Videos"
+permalink: /resources/Videos/
 read_time: true
 toc: false
 ---

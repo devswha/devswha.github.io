@@ -33,7 +33,7 @@ resources:
 
   - title: Extras
     children:
-      - title: "Stylesheets"
-        url: /docs/stylesheets/
+      - title: "Videos"
+        url: /resources/Videos/
       - title: "JavaScript"
         url: /docs/javascript/
