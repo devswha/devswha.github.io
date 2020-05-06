@@ -7,4 +7,5 @@ read_time: true
 toc: false
 ---
 
-It will update soon!
+
+[![Video Label](http://img.youtube.com/vi/kCBzZo8cj60/0.jpg)](https://youtu.be/kCBzZo8cj60?t=0s)
