@@ -2,7 +2,9 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Resources"
+  - title: "Review"
+    url: /reviews/
+  - title: "Project"
     url: /resources/Intro/
 
 resources:
@@ -22,18 +24,5 @@ resources:
         url: /resources/Attention/
       - title: "FH Data Augmentation"
         url: /resources/Augmentation/
-
-
-  - title: Other Domain
-    children:
-      - title: "Chicago Crime Location Prediction"
-        url: /resources/Chicago/
-      - title: "RSNA Pneumonia Detection Challenge"
-        url: /resources/RSNA/
-
-  - title: Extras
-    children:
-      - title: "Videos"
+      - title: "Demo Videos"
         url: /resources/Videos/
-      - title: "JavaScript"
-        url: /docs/javascript/

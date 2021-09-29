@@ -9,17 +9,22 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Posts by Tag - Wellcome to Sangwoo Ha Project Page!</title>
-<meta name="description" content="Sangwoo Ha Project Page">
+<!-- begin _includes/seo.html --><title>Posts by Tag - Sangwoo’s DevLog</title>
+<meta name="description" content="devswha blog">
 
+
+  <meta name="author" content="Sangwoo Ha">
+  
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Wellcome to Sangwoo Ha Project Page!">
+<meta property="og:site_name" content="Sangwoo's DevLog">
 <meta property="og:title" content="Posts by Tag">
-<meta property="og:url" content="http://localhost:4000/swha/tags/">
+<meta property="og:url" content="http://localhost:4000/tags/">
 
+
+  <meta property="og:description" content="devswha blog">
 
 
 
@@ -36,23 +41,21 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/swha/tags/">
+<link rel="canonical" href="http://localhost:4000/tags/">
 
 
 
 
-
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
       "@type": "Person",
       "name": "Sangwoo Ha",
-      "url": "http://localhost:4000/swha",
-      "sameAs": null
-    }
-  </script>
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
 
 
 
@@ -63,7 +66,9 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/swha/feed.xml" type="application/atom+xml" rel="alternate" title="Wellcome to Sangwoo Ha Project Page! Feed">
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sangwoo's DevLog Feed">
+
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,22 +78,9 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/swha/assets/css/main.css">
-
-<!--[if IE ]>
-  <style>
-    /* old IE unsupported flexbox fixes */
-    .greedy-nav .site-title {
-      padding-right: 3em;
-    }
-    .greedy-nav button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  </style>
-<![endif]-->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
 
 
@@ -102,7 +94,6 @@
 
   <body class="layout--tags">
     <nav class="skip-links">
-  <h2 class="screen-reader-text">Skip links</h2>
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
     <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
@@ -121,14 +112,16 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-        <a class="site-title" href="/swha/">
-          Wellcome to Sangwoo Ha Project Page!
+        <a class="site-title" href="/">
+          Sangwoo's DevLog
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/swha/about/" >About</a>
+              <a href="/about/">About</a>
             </li><li class="masthead__menu-item">
-              <a href="/swha/resources/Intro/" >Resources</a>
+              <a href="/reviews/">Review</a>
+            </li><li class="masthead__menu-item">
+              <a href="/resources/Intro/">Project</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -153,18 +146,25 @@
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/bio-photo.jpg" alt="Sangwoo Ha" itemprop="image" class="u-photo">
+      </a>
+    </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sangwoo Ha</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Sangwoo Ha</h3>
-    
-    
-      <p class="author__bio" itemprop="description">
-        Master student, UNIST, Adviser Prof.Tsz-Chiu Au
-      </p>
+      <div class="author__bio p-note" itemprop="description">
+        <p>Developer, UNIST, Adviser Prof.Tsz-Chiu Au</p>
+
+      </div>
     
   </div>
 
@@ -173,28 +173,35 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Korea</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
         </li>
       
 
       
         
           
-        
+            <li><a href="https://devswha.github.io" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
           
         
           
-        
+            <li><a href="https://www.facebook.com/sangwoo.ha.12/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
           
         
           
-        
+            <li><a href="https://github.com/devswha" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
           
         
       
 
       
 
+      
+        <li>
+          <a href="mailto:devswha@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="devswha@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
       
 
       
@@ -243,7 +250,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -251,9 +258,9 @@
     </ul>
   </div>
 </div>
-
   
   </div>
+
 
 
   <div class="archive">
@@ -292,31 +299,28 @@
     
       
         
-      
+          <li><a href="https://www.facebook.com/sangwoo.ha.12/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
         
       
         
-      
-        
-      
-        
-      
+          <li><a href="https://github.com/devswha" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
         
       
     
 
-    <li><a href="/swha/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Sangwoo Ha. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2021 Sangwoo Ha. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
-  <script src="/swha/assets/js/main.min.js"></script>
-  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+  <script src="/assets/js/main.min.js"></script>
 
 
 
