@@ -1,5 +1,7 @@
 ---
 title: "keras-Unet"
+categories: 
+ - review
 excerpt: "The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook"
 last_modified_at: 2019-09-29
 toc: true
