@@ -5,9 +5,9 @@ var store = [{
         "url": "http://localhost:4000/resource/test/",
         "teaser":null},{
         "title": "keras-Unet",
-        "excerpt":"keras-Unet The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by U-Net: Convolutional Networks for Biomedical Image Segmentation. And I mainly referred to the images and codes of these github: zhixuhao github and ugent-korea github Abstract The author...","categories": [],
+        "excerpt":"keras-Unet The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by U-Net: Convolutional Networks for Biomedical Image Segmentation. And I mainly referred to the images and codes of these github: zhixuhao github and ugent-korea github Abstract The author...","categories": ["review"],
         "tags": [],
-        "url": "http://localhost:4000/keras-unet/",
+        "url": "http://localhost:4000/review/keras-unet/",
         "teaser":"http://localhost:4000/assets/images/Attention.png"},{
         "title": "Attention Module",
         "excerpt":"Apart from the CNN model of depth, width, and cardinality factors, we investigate a different aspect of the CNN architecture design, attention. The significance of attention has been studied extensively in the previous literature. Our goal is to increase the focus image feature power of CNN by using attention mechanism:...","categories": [],
