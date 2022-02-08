@@ -2,8 +2,8 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Review"
-    url: /reviews/
+  - title: "Archive"
+    url: /archive/
   - title: "Project"
     url: /resources/Intro/
 

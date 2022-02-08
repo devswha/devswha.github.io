@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-03T15:48:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sangwoo’s DevLog</title><subtitle>devswha blog</subtitle><author><name>Sangwoo Ha</name><email>devswha@gmail.com</email></author><entry><title type="html">keras-Unet</title><link href="http://localhost:4000/review/keras-unet/" rel="alternate" type="text/html" title="keras-Unet" /><published>2021-09-29T00:00:00+09:00</published><updated>2019-09-29T00:00:00+09:00</updated><id>http://localhost:4000/review/keras-unet</id><content type="html" xml:base="http://localhost:4000/review/keras-unet/">&lt;h1 id=&quot;keras-unet&quot;&gt;keras-Unet&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-08T11:11:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sangwoo’s DevLog</title><subtitle>devswha blog</subtitle><author><name>Sangwoo Ha</name><email>devswha@gmail.com</email></author><entry><title type="html">Segmentation using Unet with Keras and Jupyter Notebook</title><link href="http://localhost:4000/review/keras-unet/" rel="alternate" type="text/html" title="Segmentation using Unet with Keras and Jupyter Notebook" /><published>2021-09-29T00:00:00+09:00</published><updated>2019-09-29T00:00:00+09:00</updated><id>http://localhost:4000/review/keras-unet</id><content type="html" xml:base="http://localhost:4000/review/keras-unet/">&lt;blockquote&gt;
+  &lt;p&gt;The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by &lt;a href=&quot;http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/&quot;&gt;U-Net: Convolutional Networks for Biomedical Image Segmentation&lt;/a&gt;. And I mainly referred to the images and codes of these github: &lt;a href=&quot;https://github.com/zhixuhao/unet&quot;&gt;zhixuhao github&lt;/a&gt; and &lt;a href=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation&quot;&gt;ugent-korea github&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by &lt;a href=&quot;http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/&quot;&gt;U-Net: Convolutional Networks for Biomedical Image Segmentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;And I mainly referred to the images and codes of these github: &lt;a href=&quot;https://github.com/zhixuhao/unet&quot;&gt;zhixuhao github&lt;/a&gt; and &lt;a href=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation&quot;&gt;ugent-korea github&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
 
 &lt;p&gt;The author of paper propose a simple and effective end-to-end image segmentation network architecture for medical images.
@@ -70,113 +69,115 @@ The proposed network, called U-net, has main three factors for well-training.&lt
   &lt;img width=&quot;250&quot; height=&quot;250&quot; src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/original.png&quot; /&gt; &lt;br /&gt;Original Image&amp;lt;/td&amp;gt;
 &lt;/p&gt;
 
-&lt;p&gt;&amp;lt;table border=0 width=”99%” &amp;gt;
-	&amp;lt;tbody&amp;gt; 
-    &amp;lt;tr&amp;gt;		&amp;lt;td width=&quot;99%&quot; align=&quot;center&quot; colspan=&quot;4&quot;&amp;gt;&lt;strong&gt;Image&amp;lt;/td&amp;gt;
+&lt;table border=&quot;0&quot; width=&quot;99%&quot;&gt;
+	&lt;tbody&gt; 
+    &lt;tr&gt;		&lt;td width=&quot;99%&quot; align=&quot;center&quot; colspan=&quot;4&quot;&gt;&lt;strong&gt;Image&amp;lt;/td&amp;gt;
 		&amp;lt;/tr&amp;gt;
-		&amp;lt;tr&amp;gt;
-			&amp;lt;td width=&quot;19%&quot; align=&quot;center&quot;&amp;gt; Flip  &amp;lt;/td&amp;gt; 
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/flip_vert&quot; /&gt; &lt;br /&gt;Vertical  &amp;lt;/td&amp;gt; 
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/flip_hori&quot; /&gt;  &lt;br /&gt;Horizontal&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/flip_both&quot; /&gt; &lt;br /&gt;Both&amp;lt;/td&amp;gt;
-		&amp;lt;/tr&amp;gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;19%&quot; align=&quot;center&quot;&gt; Flip  &lt;/td&gt; 
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/flip_vert&quot; /&gt; &lt;br /&gt;Vertical  &lt;/td&gt; 
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/flip_hori&quot; /&gt;  &lt;br /&gt;Horizontal&lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/flip_both&quot; /&gt; &lt;br /&gt;Both&lt;/td&gt;
+		&lt;/tr&gt;
       		&amp;lt;/tr&amp;gt;
-		&amp;lt;tr&amp;gt;
-			&amp;lt;td width=&quot;19%&quot; align=&quot;center&quot;&amp;gt; Gaussian noise &amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/gn_10&quot; /&gt; &lt;br /&gt;Standard Deviation: 10&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/gn_50&quot; /&gt; &lt;br /&gt;Standard Deviation: 50&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/gn_100&quot; /&gt; &lt;br /&gt;Standard Deviation: 100&amp;lt;/td&amp;gt;
-   		&amp;lt;/tr&amp;gt;
-		&amp;lt;tr&amp;gt;
-			&amp;lt;td width=&quot;19%&quot; align=&quot;center&quot;&amp;gt; Uniform noise &amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/uniform_10&quot; /&gt; &lt;br /&gt;Intensity: 10 &amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/un_50&quot; /&gt; &lt;br /&gt;Intensity: 50&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/un_100&quot; /&gt; &lt;br /&gt;Intensity: 100&amp;lt;/td&amp;gt;
-		&amp;lt;/tr&amp;gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;19%&quot; align=&quot;center&quot;&gt; Gaussian noise &lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/gn_10&quot; /&gt; &lt;br /&gt;Standard Deviation: 10&lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/gn_50&quot; /&gt; &lt;br /&gt;Standard Deviation: 50&lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/gn_100&quot; /&gt; &lt;br /&gt;Standard Deviation: 100&lt;/td&gt;
+   		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;19%&quot; align=&quot;center&quot;&gt; Uniform noise &lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/uniform_10&quot; /&gt; &lt;br /&gt;Intensity: 10 &lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/un_50&quot; /&gt; &lt;br /&gt;Intensity: 50&lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/un_100&quot; /&gt; &lt;br /&gt;Intensity: 100&lt;/td&gt;
+		&lt;/tr&gt;
       		&amp;lt;/tr&amp;gt;
-		&amp;lt;tr&amp;gt;
-			&amp;lt;td width=&quot;19%&quot; align=&quot;center&quot;&amp;gt; Brightness &amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/bright_10&quot; /&gt; &lt;br /&gt;Intensity: 10&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/br_50.png&quot; /&gt; &lt;br /&gt;Intensity: 20&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/br_100.png&quot; /&gt; &lt;br /&gt;Intensity: 30&amp;lt;/td&amp;gt;
-		&amp;lt;/tr&amp;gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;19%&quot; align=&quot;center&quot;&gt; Brightness &lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/bright_10&quot; /&gt; &lt;br /&gt;Intensity: 10&lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/br_50.png&quot; /&gt; &lt;br /&gt;Intensity: 20&lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/br_100.png&quot; /&gt; &lt;br /&gt;Intensity: 30&lt;/td&gt;
+		&lt;/tr&gt;
       		&amp;lt;/tr&amp;gt;
-		&amp;lt;tr&amp;gt;
-			&amp;lt;td width=&quot;19%&quot; align=&quot;center&quot;&amp;gt; Elastic deformation &amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/ed_10.png&quot; /&gt; &lt;br /&gt;Random Deformation: 1&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/ed_34.png&quot; /&gt; &lt;br /&gt;Random Deformation: 2&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;27%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/ed_50.png&quot; /&gt; &lt;br /&gt;Random Deformation: 3&amp;lt;/td&amp;gt;
-		&amp;lt;/tr&amp;gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;19%&quot; align=&quot;center&quot;&gt; Elastic deformation &lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/ed_10.png&quot; /&gt; &lt;br /&gt;Random Deformation: 1&lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/ed_34.png&quot; /&gt; &lt;br /&gt;Random Deformation: 2&lt;/td&gt;
+			&lt;td width=&quot;27%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/ed_50.png&quot; /&gt; &lt;br /&gt;Random Deformation: 3&lt;/td&gt;
+		&lt;/tr&gt;
 		&amp;lt;/tr&amp;gt;
 	&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&amp;lt;/table&amp;gt;       
 
-&lt;h3 id=&quot;crop-and-pad&quot;&gt;Crop and Pad&lt;/h3&gt;
-&lt;p&gt;&amp;lt;table border=0 width=”99%” &amp;gt;
-	&amp;lt;tbody&amp;gt; 
-    &amp;lt;tr&amp;gt;		&amp;lt;td width=&quot;99%&quot; align=&quot;center&quot; colspan=&quot;4&quot;&amp;gt;&lt;strong&gt;Crop&amp;lt;/td&amp;gt;
+### Crop and Pad
+&lt;table border=&quot;0&quot; width=&quot;99%&quot;&gt;
+	&lt;tbody&gt; 
+    &lt;tr&gt;		&lt;td width=&quot;99%&quot; align=&quot;center&quot; colspan=&quot;4&quot;&gt;&lt;strong&gt;Crop&amp;lt;/td&amp;gt;
 	    &amp;lt;/tr&amp;gt;
-		&amp;lt;tr&amp;gt;
-			&amp;lt;td width=&quot;25%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/c_lb&quot; /&gt; &lt;br /&gt;  Left Bottom &amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;25%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/c_lt&quot; /&gt; &lt;br /&gt; Left Top&amp;lt;/td&amp;gt; 
-			&amp;lt;td width=&quot;25%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/c_rb&quot; /&gt; &lt;br /&gt; Right Bottom&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;25%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/c_rt&quot; /&gt; &lt;br /&gt; Right Top&amp;lt;/td&amp;gt; 
-		&amp;lt;/tr&amp;gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/c_lb&quot; /&gt; &lt;br /&gt;  Left Bottom &lt;/td&gt;
+			&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/c_lt&quot; /&gt; &lt;br /&gt; Left Top&lt;/td&gt; 
+			&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/c_rb&quot; /&gt; &lt;br /&gt; Right Bottom&lt;/td&gt;
+			&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/c_rt&quot; /&gt; &lt;br /&gt; Right Top&lt;/td&gt; 
+		&lt;/tr&gt;
       		&amp;lt;/tr&amp;gt;
 	&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&amp;lt;/table&amp;gt;         
 
-&lt;p&gt;Padding process is compulsory after the cropping process as the image has to fit the input size of the U-Net model.&lt;/p&gt;
+Padding process is compulsory after the cropping process as the image has to fit the input size of the U-Net model. 
 
-&lt;p&gt;In terms of the padding method, &lt;strong&gt;symmetric padding&lt;/strong&gt; was done in which the pad is the reflection of the vector mirrored along the edge of the array. We selected the symmetric padding over several other padding options because it reduces the loss the most.&lt;/p&gt;
+In terms of the padding method, **symmetric padding** was done in which the pad is the reflection of the vector mirrored along the edge of the array. We selected the symmetric padding over several other padding options because it reduces the loss the most. 
 
-&lt;p&gt;To help with observation, a &lt;img src=&quot;https://placehold.it/15/ffff00/000000?text=+&quot; alt=&quot;#ffff00&quot; /&gt; ‘yellow border’ is added around the original image: outside the border indicates symmetric padding whereas inside indicates the original image.&lt;/p&gt;
+To help with observation, a ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) 'yellow border' is added around the original image: outside the border indicates symmetric padding whereas inside indicates the original image.
 
-&lt;p&gt;&amp;lt;table border=0 width=”99%” &amp;gt;
-	&amp;lt;tbody&amp;gt; 
-    &amp;lt;tr&amp;gt;		&amp;lt;td width=&quot;99%&quot; align=&quot;center&quot; colspan=&quot;4&quot;&amp;gt;&lt;strong&gt;Pad&amp;lt;/td&amp;gt;
+&lt;table border=&quot;0&quot; width=&quot;99%&quot;&gt;
+	&lt;tbody&gt; 
+    &lt;tr&gt;		&lt;td width=&quot;99%&quot; align=&quot;center&quot; colspan=&quot;4&quot;&gt;&lt;strong&gt;Pad&amp;lt;/td&amp;gt;
 	    &amp;lt;/tr&amp;gt;
-		&amp;lt;tr&amp;gt;
-			&amp;lt;td width=&quot;25%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/p_lb.PNG&quot; /&gt; &lt;br /&gt;  Left Bottom &amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;25%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/p_lt.PNG&quot; /&gt; &lt;br /&gt; Left Top&amp;lt;/td&amp;gt; 
-			&amp;lt;td width=&quot;25%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/p_rb.PNG&quot; /&gt; &lt;br /&gt; Right bottom&amp;lt;/td&amp;gt;
-			&amp;lt;td width=&quot;25%&quot; align=&quot;center&quot;&amp;gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/p_rt.PNG&quot; /&gt; &lt;br /&gt; Right Top&amp;lt;/td&amp;gt; 
-		&amp;lt;/tr&amp;gt;
+		&lt;tr&gt;
+			&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/p_lb.PNG&quot; /&gt; &lt;br /&gt;  Left Bottom &lt;/td&gt;
+			&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/p_lt.PNG&quot; /&gt; &lt;br /&gt; Left Top&lt;/td&gt; 
+			&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/p_rb.PNG&quot; /&gt; &lt;br /&gt; Right bottom&lt;/td&gt;
+			&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt; &lt;img src=&quot;https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/p_rt.PNG&quot; /&gt; &lt;br /&gt; Right Top&lt;/td&gt; 
+		&lt;/tr&gt;
       		&amp;lt;/tr&amp;gt;
 	&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&amp;lt;/table&amp;gt;         
 
-&lt;h2 id=&quot;network-architecture&quot;&gt;Network Architecture&lt;/h2&gt;
+
+
+## Network Architecture
 
 &lt;p align=&quot;center&quot;&gt;
     &lt;img src=&quot;https://github.com/devswha/keras-Unet/blob/master/images/unet.png&quot; width=&quot;70%&quot; height=&quot;70%&quot; /&gt;
 &lt;/p&gt;
 
-&lt;h3 id=&quot;contracting-path-fully-convolution&quot;&gt;Contracting Path (Fully Convolution)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Typical convolutional network.&lt;/li&gt;
-  &lt;li&gt;3x3 convolution layer with max-pooling and drop out&lt;/li&gt;
-  &lt;li&gt;Extracts the image feature accurately, but reduces the size of the image feature map.&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;h3 id=&quot;expanding-path-deconvolution&quot;&gt;Expanding Path (Deconvolution)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Output segmentation map by upsampling the feature map&lt;/li&gt;
-  &lt;li&gt;2x2 up-convolution and 3x3 convolution layer with concatenation&lt;/li&gt;
-  &lt;li&gt;The disadvantage of upsampling process is that the localization information in the image feature map will be lost.&lt;/li&gt;
-  &lt;li&gt;Therefore, localization information less lost by concatenating the feature map after up-conv with the same level feature map.&lt;/li&gt;
-  &lt;li&gt;Last one is 1x1 convolution mapping&lt;/li&gt;
-&lt;/ul&gt;
+### Contracting Path (Fully Convolution)
+- Typical convolutional network.
+- 3x3 convolution layer with max-pooling and drop out
+- Extracts the image feature accurately, but reduces the size of the image feature map.
 
-&lt;h2 id=&quot;result&quot;&gt;Result&lt;/h2&gt;
+
+### Expanding Path (Deconvolution)
+- Output segmentation map by upsampling the feature map
+- 2x2 up-convolution and 3x3 convolution layer with concatenation
+- The disadvantage of upsampling process is that the localization information in the image feature map will be lost.
+- Therefore, localization information less lost by concatenating the feature map after up-conv with the same level feature map.
+- Last one is 1x1 convolution mapping
+
+## Result
 
 &lt;p align=&quot;center&quot;&gt;
     &lt;img src=&quot;https://github.com/devswha/keras-Unet/blob/master/images/result.gif&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;When you download my code, your directory tree should consist of the following&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;keras-Unet/
+
+## Usage
+When you download my code, your directory tree should consist of the following
+```
+keras-Unet/
 ├── data
     ├── test-volume.tif
     ├── train-labels.tif
@@ -190,17 +191,20 @@ The proposed network, called U-net, has main three factors for well-training.&lt
 ├── train.py
 ├── utills.py
 └── requirement.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;You can change the root directory of data to change the &lt;em&gt;data_path&lt;/em&gt; in pre-processing.py and augmentation.py&lt;/p&gt;
+```
+You can change the root directory of data to change the *data_path* in pre-processing.py and augmentation.py 
 
-&lt;p&gt;However, at least three original competition data (test-volume, train-labels, train-volume) should put in the &lt;em&gt;data_path&lt;/em&gt;&lt;/p&gt;
+However, at least three original competition data (test-volume, train-labels, train-volume) should put in the *data_path*
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 augmentation.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 preprocessing.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 train.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Easly to use my program just run augmentation-preprocessing-train step.
-You can get the prediction.tif for the result.&lt;/p&gt;
+```bash
+$ python3 augmentation.py
+$ python3 preprocessing.py
+$ python3 train.py
+```
 
-&lt;p&gt;And you can just run the &lt;strong&gt;jupyter.ipynb&lt;/strong&gt; with &lt;a href=&quot;https://jupyter.org/&quot;&gt;jupyter notebook&lt;/a&gt; to see how U-net works.&lt;/p&gt;</content><author><name>Sangwoo Ha</name><email>devswha@gmail.com</email></author><summary type="html">The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook</summary></entry><entry><title type="html">Project Homepage Open!</title><link href="http://localhost:4000/resource/test/" rel="alternate" type="text/html" title="Project Homepage Open!" /><published>2019-07-21T00:00:00+09:00</published><updated>2019-07-22T00:00:00+09:00</updated><id>http://localhost:4000/resource/test</id><content type="html" xml:base="http://localhost:4000/resource/test/"></content><author><name>Sangwoo Ha</name><email>devswha@gmail.com</email></author><summary type="html"></summary></entry></feed>
+Easly to use my program just run augmentation-preprocessing-train step.
+You can get the prediction.tif for the result.
+
+And you can just run the **jupyter.ipynb** with [jupyter notebook](https://jupyter.org/) to see how U-net works. 
+&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</content><author><name>Sangwoo Ha</name><email>devswha@gmail.com</email></author><category term="review" /><summary type="html">The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook</summary></entry></feed>

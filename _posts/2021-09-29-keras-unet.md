@@ -1,20 +1,18 @@
 ---
-title: "keras-Unet"
+title: "Segmentation using Unet with Keras and Jupyter Notebook"
+layout: posts
 categories: 
  - review
 excerpt: "The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook"
 last_modified_at: 2019-09-29
-toc: true
+toc: False
 header:
-  image: /assets/images/Attention.png
-  teaser: assets/images/Attention.png
+  #image: /assets/images/Attention.png
+  teaser: assets/images/keras-Unet/unet.png
 ---
 
-# keras-Unet
+>The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by [U-Net: Convolutional Networks for Biomedical Image Segmentation](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/). And I mainly referred to the images and codes of these github: [zhixuhao github](https://github.com/zhixuhao/unet) and [ugent-korea github](https://github.com/ugent-korea/pytorch-unet-segmentation)
 
-The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by [U-Net: Convolutional Networks for Biomedical Image Segmentation](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
-
-And I mainly referred to the images and codes of these github: [zhixuhao github](https://github.com/zhixuhao/unet) and [ugent-korea github](https://github.com/ugent-korea/pytorch-unet-segmentation)
 ## Abstract
 
 The author of paper propose a simple and effective end-to-end image segmentation network architecture for medical images.
