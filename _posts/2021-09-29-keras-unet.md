@@ -1,6 +1,5 @@
 ---
 title: "Segmentation using Unet with Keras and Jupyter Notebook"
-layout: posts
 categories: 
  - review
 excerpt: "The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook"
@@ -60,64 +59,56 @@ We preprocessed the images for data augmentation. Following preprocessing are :
 
 You can easily to understand refer this [page](https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/README.md#preprocessing)
 
-
-<p align="center">
-  <img width="250" height="250" src="/assets/images/keras-Unet//readme_images/original.png"> <br />Original Image</td>
-</p>
-
+<p align="center"><img width="250" height="250" src="/assets/images/keras-Unet/readme_images/original.png"> <br />Original Image</p>
 <table border=0 width="99%" >
 	<tbody> 
-    <tr>		<td width="99%" align="center" colspan="4"><strong>Image</td>
+		<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Image</strong></td>
 		</tr>
 		<tr>
 			<td width="19%" align="center"> Flip  </td> 
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/flip_vert"> <br />Vertical  </td> 
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/flip_hori">  <br />Horizontal</td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/flip_both"> <br />Both</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_vert"> <br />Vertical  </td> 
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_hori">  <br />Horizontal</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_both"> <br />Both</td>
 		</tr>
-      		</tr>
 		<tr>
 			<td width="19%" align="center"> Gaussian noise </td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/gn_10"> <br />Standard Deviation: 10</td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/gn_50"> <br />Standard Deviation: 50</td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/gn_100"> <br />Standard Deviation: 100</td>
-   		</tr>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_10"> <br />Standard Deviation: 10</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_50"> <br />Standard Deviation: 50</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_100"> <br />Standard Deviation: 100</td>
+		</tr>
 		<tr>
 			<td width="19%" align="center"> Uniform noise </td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/uniform_10"> <br />Intensity: 10 </td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/un_50"> <br />Intensity: 50</td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/un_100"> <br />Intensity: 100</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/uniform_10"> <br />Intensity: 10 </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/un_50"> <br />Intensity: 50</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/un_100"> <br />Intensity: 100</td>
 		</tr>
-      		</tr>
 		<tr>
 			<td width="19%" align="center"> Brightness </td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/bright_10"> <br />Intensity: 10</td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/br_50.png"> <br />Intensity: 20</td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/br_100.png"> <br />Intensity: 30</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/bright_10"> <br />Intensity: 10</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/br_50.png"> <br />Intensity: 20</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/br_100.png"> <br />Intensity: 30</td>
 		</tr>
-      		</tr>
 		<tr>
 			<td width="19%" align="center"> Elastic deformation </td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/ed_10.png"> <br />Random Deformation: 1</td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/ed_34.png"> <br />Random Deformation: 2</td>
-			<td width="27%" align="center"> <img src="/assets/images/keras-Unet//readme_images/ed_50.png"> <br />Random Deformation: 3</td>
-		</tr>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_10.png"> <br />Random Deformation: 1</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_34.png"> <br />Random Deformation: 2</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_50.png"> <br />Random Deformation: 3</td>
 		</tr>
 	</tbody>
 </table>       
-
 ### Crop and Pad
 <table border=0 width="99%" >
 	<tbody> 
-    <tr>		<td width="99%" align="center" colspan="4"><strong>Crop</td>
+    	<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Crop</strong></td>
 	    </tr>
 		<tr>
-			<td width="25%" align="center"> <img src="/assets/images/keras-Unet//readme_images/c_lb"> <br />  Left Bottom </td>
-			<td width="25%" align="center"> <img src="/assets/images/keras-Unet//readme_images/c_lt"> <br /> Left Top</td> 
-			<td width="25%" align="center"> <img src="/assets/images/keras-Unet//readme_images/c_rb"> <br /> Right Bottom</td>
-			<td width="25%" align="center"> <img src="/assets/images/keras-Unet//readme_images/c_rt"> <br /> Right Top</td> 
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_lb"> <br />  Left Bottom </td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_lt"> <br /> Left Top</td> 
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_rb"> <br /> Right Bottom</td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_rt"> <br /> Right Top</td> 
 		</tr>
-      		</tr>
 	</tbody>
 </table>         
 
@@ -125,19 +116,19 @@ Padding process is compulsory after the cropping process as the image has to fit
 
 In terms of the padding method, **symmetric padding** was done in which the pad is the reflection of the vector mirrored along the edge of the array. We selected the symmetric padding over several other padding options because it reduces the loss the most. 
 
-To help with observation, a ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) 'yellow border' is added around the original image: outside the border indicates symmetric padding whereas inside indicates the original image.
+To help with observation, a <span style="color:black; background-color:yellow;">yellow border</span> is added around the original image: outside the border indicates symmetric padding whereas inside indicates the original image.
 
 <table border=0 width="99%" >
 	<tbody> 
-    <tr>		<td width="99%" align="center" colspan="4"><strong>Pad</td>
+    	<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Pad</strong></td>
 	    </tr>
 		<tr>
-			<td width="25%" align="center"> <img src="/assets/images/keras-Unet//readme_images/p_lb.PNG"> <br />  Left Bottom </td>
-			<td width="25%" align="center"> <img src="/assets/images/keras-Unet//readme_images/p_lt.PNG"> <br /> Left Top</td> 
-			<td width="25%" align="center"> <img src="/assets/images/keras-Unet//readme_images/p_rb.PNG"> <br /> Right bottom</td>
-			<td width="25%" align="center"> <img src="/assets/images/keras-Unet//readme_images/p_rt.PNG"> <br /> Right Top</td> 
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_lb.PNG"> <br />  Left Bottom </td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_lt.PNG"> <br /> Left Top</td> 
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_rb.PNG"> <br /> Right bottom</td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_rt.PNG"> <br /> Right Top</td> 
 		</tr>
-      		</tr>
 	</tbody>
 </table>         
 
@@ -146,7 +137,7 @@ To help with observation, a ![#ffff00](https://placehold.it/15/ffff00/000000?tex
 ## Network Architecture
 
 <p align="center">
-    <img src="https://github.com/devswha/keras-Unet/blob/master/images/unet.png" width="70%" height="70%">
+    <img src="/assets/images/keras-Unet/unet.png" width="70%" height="70%">
 </p>
 
 
@@ -166,7 +157,7 @@ To help with observation, a ![#ffff00](https://placehold.it/15/ffff00/000000?tex
 ## Result
 
 <p align="center">
-    <img src="https://github.com/devswha/keras-Unet/blob/master/images/result.gif" width="100%" height="100%">
+    <img src="/assets/images/keras-Unet/result.gif" width="100%" height="100%">
 </p>
 
 
@@ -205,5 +196,5 @@ You can get the prediction.tif for the result.
 And you can just run the **jupyter.ipynb** with [jupyter notebook](https://jupyter.org/) to see how U-net works. 
 
 
-
-
+## Github link
+[Segmentation using Unet with Keras and Jupyter Notebook](https://github.com/devswha/keras-Unet)

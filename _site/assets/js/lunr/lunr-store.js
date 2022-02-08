@@ -4,6 +4,11 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/review/keras-unet/",
         "teaser":"http://localhost:4000/assets/images/keras-Unet/unet.png"},{
+        "title": "YOLO",
+        "excerpt":"will update soon  ","categories": ["review"],
+        "tags": [],
+        "url": "http://localhost:4000/review/YOLO/",
+        "teaser":null},{
         "title": "Attention Module",
         "excerpt":"Apart from the CNN model of depth, width, and cardinality factors, we investigate a different aspect of the CNN architecture design, attention. The significance of attention has been studied extensively in the previous literature. Our goal is to increase the focus image feature power of CNN by using attention mechanism:...","categories": [],
         "tags": [],

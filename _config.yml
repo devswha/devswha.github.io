@@ -274,8 +274,8 @@ defaults:
       layout: single
       author_profile: false
       read_time: false
-      comments: # true
-      share: false
+      comments: true
+      share: true
       related: true
   - scope:
       path: ""
