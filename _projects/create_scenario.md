@@ -2,7 +2,7 @@
 layout: single
 classes: wide
 title: "Create the RCRS Scenario"
-permalink: /resources/create_scenario/
+permalink: /projects/create_scenario/
 read_time: true
 toc: false
 ---

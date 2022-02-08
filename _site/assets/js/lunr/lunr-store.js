@@ -22,7 +22,7 @@ var store = [{
         "title": "Create the RCRS Scenario",
         "excerpt":"The RoboCup Rescue Simulation (RCRS) requires a disaster scenario to be used in simulators. The scenarios include information of the map of the disaster zone, location of rescue teams and civilians, location of urban facilities (i.e., refuge, gas station, etc.) and location fire. The role of each urban facility or...","categories": [],
         "tags": [],
-        "url": "http://localhost:4000/resources/create_scenario/",
+        "url": "http://localhost:4000/projects/create_scenario/",
         "teaser":null},{
         "title": "Image based Machine Learning Model",
         "excerpt":"To predict the density of injured civilian in RCRS using image-based data, we train the machine learning model using simulation screenshot images. We consider that all frames of video clip in disaster situations are independent images. Therefore, we choose one frame randomly in images sequence of a disaster scenario in...","categories": [],
