@@ -5,24 +5,24 @@ main:
   - title: "Archive"
     url: /archive/
   - title: "Project"
-    url: /resources/Intro/
+    url: /projects/intro
 
-resources:
+projects:
   - title: RCRS with Deep Learning
     children:
       - title: "RoboCup Rescue Simulation"
-        url: /resources/RCRS/
+        url: /projects/RCRS/
       - title: "Create the RCRS Scenario"
-        url: /resources/Create_Scenario/
+        url: /projects/create_scenario/
       - title: "Scenario Generator"
-        url: /resources/Scenario_Generator/
+        url: /projects/scenario_generator/
       - title: "Image-based ML Model"
-        url: /resources/Image_ML/
+        url: /projects/image_ML/
       - title: "Video-based ML Model"
-        url: /resources/Video_ML/
+        url: /projects/video_ML/
       - title: "Attention Module"
-        url: /resources/Attention/
+        url: /projects/attention/
       - title: "FH Data Augmentation"
-        url: /resources/Augmentation/
+        url: /projects/augmentation/
       - title: "Demo Videos"
-        url: /resources/Videos/
+        url: /projects/videos/

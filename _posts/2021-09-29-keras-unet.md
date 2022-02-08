@@ -7,7 +7,6 @@ excerpt: "The implementation of biomedical image segmentation with the use of U-
 last_modified_at: 2019-09-29
 toc: False
 header:
-  #image: /assets/images/Attention.png
   teaser: assets/images/keras-Unet/unet.png
 ---
 

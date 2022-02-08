@@ -23,8 +23,8 @@ description              : "devswha blog"
 url                      : "https://devswha.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "devswha/devswha.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/RCRS/500x300.png"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/RCRS/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name             : "Sangwoo Ha"
-  avatar           : #"/assets/images/bio-photo.jpg"
+  avatar           : #"/assets/images/RCRS/bio-photo.jpg"
   bio              : "Developer, UNIST, Adviser Prof.Tsz-Chiu Au"
   location         : "Korea"
   email            : "devswha@gmail.com"
@@ -283,10 +283,11 @@ defaults:
     values:
       layout: single
       author_profile: false
-   # _resources
+  
+  # _projects
   - scope:
       path: ""
-      type: resources
+      type: projects
     values:
       layout: single
       read_time: false
@@ -294,20 +295,9 @@ defaults:
       share: false
       comments: true
       sidebar:
-        nav: "resources"
-  - scope:
-      path: ""
-      type: docs
-    values:
-      layout: single
-      read_time: false
-      author_profile: false
-      share: false
-      comments: true
-      sidebar:
-        nav: "resources"
+        nav: "projects"
 
 collections:
-  resources:
+  projects:
     output: true
     permalink: /:collection/:path/
