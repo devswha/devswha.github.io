@@ -7,7 +7,9 @@ main:
   - title: "Project"
     url: /projects/intro
 
+
 projects:
+  - title: LostArk Avatar Creator
   - title: RCRS with Deep Learning
     children:
       - title: "RoboCup Rescue Simulation"
@@ -26,3 +28,4 @@ projects:
         url: /projects/augmentation/
       - title: "Demo Videos"
         url: /projects/videos/
+
