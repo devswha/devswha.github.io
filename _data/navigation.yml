@@ -9,7 +9,10 @@ main:
 
 
 projects:
-  - title: LostArk Avatar Creator
+  - title: Project in progress
+    children:
+      - title: "LostArk Avartar Creator"
+        url: /projects/lostark
   - title: RCRS with Deep Learning
     children:
       - title: "RoboCup Rescue Simulation"
