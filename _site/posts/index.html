@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Archive - AI 친구 만들기 대작전</title>
+<!-- begin _includes/seo.html --><title>  AI 친구 만들기 대작전</title>
 <meta name="description" content="devswha blog">
 
 
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="AI 친구 만들기 대작전">
-<meta property="og:title" content="Archive">
-<meta property="og:url" content="http://localhost:4000/archive/">
+<meta property="og:title" content="AI 친구 만들기 대작전">
+<meta property="og:url" content="http://localhost:4000/posts/">
 
 
   <meta property="og:description" content="devswha blog">
@@ -41,7 +41,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/archive/">
+<link rel="canonical" href="http://localhost:4000/posts/">
 
 
 
@@ -92,7 +92,7 @@
 
   </head>
 
-  <body class="layout--categories">
+  <body class="layout--posts">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -140,95 +140,214 @@
 
 <div id="main" role="main">
   
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpg" alt="Sangwoo Ha" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sangwoo Ha</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>언젠간 AI랑 친구가 될 수 있을거야…</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea, Seoul</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/devswha" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:devswha@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="devswha@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  <!-- 
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+  </ul>
+</nav> -->
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span class="nav__sub-title" v-on:click='togglec()'>📂 전체 글 수 2 개</span>
+      </li>
+      <li>
+        <span class="nav__sub-title" v-on:click='togglec()'><a href="/categories/논문뿌셔먹기">🍽️ 논문뿌셔먹기 (1)</a></span>
+        
+        
+          
+          <ul v-show="flag_c">
+            
+              
+            
+          </ul>
+        
+          
+          <ul v-show="flag_c">
+            
+              
+            
+          </ul>
+        
+          
+          <ul v-show="flag_c">
+            
+              
+            
+          </ul>
+        
+          
+          <ul v-show="flag_c">
+            
+              
+            
+          </ul>
+        
+          
+          <ul v-show="flag_c">
+            
+              
+            
+          </ul>
+        
+
+        <span class="nav__sub-title" v-on:click='togglec()'><a href="/categories/프로그래밍">💻 구현 / 프로그래밍 (1)</a></span>
+        
+        <!-- <span class="nav__sub-title" v-on:click='togglet()'>tags</span>
+        <ul v-show="flag_t">
+        
+          
+          
+
+            
+              
+                
+                  <li><a href="/tags/#unet" class="">Unet (1)</a></li>
+                
+              
+            
+            
+        </ul> -->
+      </li>
+  </ul>
+</nav>
+  </div>
+
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title">Archive</h1>
+      <h1 id="page-title" class="page__title"></h1>
     
     
 
 
-
-
-
-<ul class="taxonomy__index">
-  
-    
-      
-        <li>
-          <a href="#프로그래밍">
-            <strong>프로그래밍</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="#논문뿌셔먹기">
-            <strong>논문뿌셔먹기</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-  
-</ul>
+<h3 class="archive__subtitle">Recent posts</h3>
 
 
 
 
   
     
-      <section id="프로그래밍" class="taxonomy__section">
-        <h2 class="archive__subtitle">프로그래밍</h2>
-        <div class="entries-grid">
-          
-            
 
 
 
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/keras-Unet/unet.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/keras-unet/" rel="permalink">Segmentation using Unet with Keras and Jupyter Notebook
-</a>
-      
-    </h2>
-    
-    <p class="page__meta">
-      
-        <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2019-09-29">2019년 09월 29일</time>&emsp;
-      
-    </p>
-    
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook
-</p>
-  </article>
-</div>
-          
-        </div>
-        <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
-      </section>
-    
-  
-    
-      <section id="논문뿌셔먹기" class="taxonomy__section">
-        <h2 class="archive__subtitle">논문뿌셔먹기</h2>
-        <div class="entries-grid">
-          
-            
-
-
-
-<div class="grid__item">
+<div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -251,12 +370,37 @@
 </p>
   </article>
 </div>
-          
-        </div>
-        <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
-      </section>
-    
   
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/keras-unet/" rel="permalink">Segmentation using Unet with Keras and Jupyter Notebook
+</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      
+        <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2019-09-29">2019년 09월 29일</time>&emsp;
+      
+    </p>
+    
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook
+</p>
+  </article>
+</div>
+  
+
+
 
 
   </div>

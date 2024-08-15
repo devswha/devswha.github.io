@@ -1,10 +1,13 @@
 ---
 title: "Segmentation using Unet with Keras and Jupyter Notebook"
 categories: 
- - review
+ - 프로그래밍
+tags:
+ - Unet
 excerpt: "The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook"
 last_modified_at: 2019-09-29
 toc: False
+classes: wide
 header:
   teaser: assets/images/keras-Unet/unet.png
 ---

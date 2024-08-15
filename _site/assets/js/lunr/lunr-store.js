@@ -1,13 +1,13 @@
 var store = [{
         "title": "Segmentation using Unet with Keras and Jupyter Notebook",
-        "excerpt":"The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by U-Net: Convolutional Networks for Biomedical Image Segmentation. And I mainly referred to the images and codes of these github: zhixuhao github and ugent-korea github Abstract The author of...","categories": ["review"],
-        "tags": [],
-        "url": "http://localhost:4000/review/keras-unet/",
+        "excerpt":"The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by U-Net: Convolutional Networks for Biomedical Image Segmentation. And I mainly referred to the images and codes of these github: zhixuhao github and ugent-korea github Abstract The author of...","categories": ["프로그래밍"],
+        "tags": ["Unet"],
+        "url": "http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/keras-unet/",
         "teaser":"http://localhost:4000/assets/images/keras-Unet/unet.png"},{
-        "title": "YOLO",
-        "excerpt":"will update soon  ","categories": ["review"],
+        "title": "[논문뿌셔먹기] MaskFormer: Per-Pixel Classification is Not All You Need for Semantic Segmentation",
+        "excerpt":"   NeurIPS 2021. [Paper] [Page] [Github]  Bowen Cheng, Alexander G. Schwing, Alexander Kirillov  Facebook AI Research (FAIR) | University of Illinois at Urbana-Champaign (UIUC)  13 Jul 2021   ","categories": ["논문뿌셔먹기"],
         "tags": [],
-        "url": "http://localhost:4000/review/YOLO/",
+        "url": "http://localhost:4000/%EB%85%BC%EB%AC%B8%EB%BF%8C%EC%85%94%EB%A8%B9%EA%B8%B0/YOLO/",
         "teaser":null},{
         "title": "Attention Module",
         "excerpt":"Apart from the CNN model of depth, width, and cardinality factors, we investigate a different aspect of the CNN architecture design, attention. The significance of attention has been studied extensively in the previous literature. Our goal is to increase the focus image feature power of CNN by using attention mechanism:...","categories": [],

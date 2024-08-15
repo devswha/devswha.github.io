@@ -1,10 +1,12 @@
 ---
-layout: single
+layout: project
 classes: wide
 title: "RoboCup Rescue Simulation with Deep Learning"
 permalink: /projects/intro
 read_time: true
 toc: false
+sidebar:
+  nav: "projects"
 ---
 
 ![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/RCRS/Intro.png){: .align-right}

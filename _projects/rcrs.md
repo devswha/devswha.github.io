@@ -1,10 +1,12 @@
 ---
-layout: single
+layout: project
 classes: wide
 title: "RoboCup Rescue Simulation (RCRS)"
 permalink: /projects/RCRS/
 read_time: true
 toc: false
+sidebar:
+  nav: "projects"
 ---
 [The RoboCup Rescue Simulation (RCRS)](https://rescuesim.robocup.org/) is an official simulator used RoboCup competition, a world-class robot competition. It is a large-scale multi-agent system aim to study earthquake disaster response and support the emergency decision making by the rescue crew. In the RCRS, the simulator simulates the earthquake occurs in the city according to a specific disaster scenario. The city where the earthquake will occur can be selected from the [Open Street Map (OSM)](https://www.openstreetmap.org) because the RCRS has a program that converts maps on the OSM into maps to be used for simulation. And the earthquake disaster scenario in the simulator consists of time steps, buildings, roads, and people.
 {: style="text-align: justify;"}

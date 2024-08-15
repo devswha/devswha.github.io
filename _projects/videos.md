@@ -1,10 +1,12 @@
 ---
-layout: single
+layout: project
 classes: wide
 title: "Videos"
 permalink: /projects/videos/
 read_time: true
 toc: false
+sidebar:
+  nav: "projects"
 ---
 
 GTA  

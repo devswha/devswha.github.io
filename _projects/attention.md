@@ -1,10 +1,12 @@
 ---
-layout: single
+layout: project
 classes: wide
 title: "Attention Module"
 permalink: /projects/attention/
 read_time: true
 toc: false
+sidebar:
+  nav: "projects"
 ---
 ![Robocup Rescue Simulation]({{site.url }}{{site.baseurl }}/assets/images/RCRS/Attention.png){: .align-center}
 

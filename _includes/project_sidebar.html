@@ -12,9 +12,8 @@
       {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
     {% endfor %}
     {% if page.sidebar.nav %}
-      {% include nav_list nav=page.sidebar.nav %}
+      {% include project_nav_list nav=page.sidebar.nav %}
     {% endif %}
   {% endif %}
-  {% include nav_list %}
   </div>
 {% endif %}

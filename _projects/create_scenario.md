@@ -1,10 +1,12 @@
 ---
-layout: single
+layout: project
 classes: wide
 title: "Create the RCRS Scenario"
 permalink: /projects/create_scenario/
 read_time: true
 toc: false
+sidebar:
+  nav: "projects"
 ---
 The RoboCup Rescue Simulation (RCRS) requires a disaster scenario to be used in simulators. The scenarios include information of the map of the disaster zone, location of rescue teams and civilians, location of urban facilities (i.e., refuge, gas station, etc.) and location fire. The role of each urban facility or rescue team and the simulation interaction when a fire occurs can be found on [this page]({{site.url }}{{site.baseurl }}/resources/RCRS/) or in [the official manual of RCRS](https://roborescue.sourceforge.io/docs/rcrs-manual.pdf). Therefore, you can create the scenario of RCRS as follows:
 {: style="text-align: justify;"}

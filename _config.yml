@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # Site Settings
 locale                   : "en-US"
-title                    : "Sangwoo's DevLog"
+title                    : "AI 친구 만들기 대작전"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Sangwoo Ha"
@@ -107,17 +107,11 @@ analytics:
 # Site Author
 author:
   name             : "Sangwoo Ha"
-  avatar           : #"/assets/images/RCRS/bio-photo.jpg"
-  bio              : "Developer, UNIST, Adviser Prof.Tsz-Chiu Au"
-  location         : "Korea"
+  avatar           : "assets/images/profile.jpg"
+  bio              : "언젠간 AI랑 친구가 될 수 있을거야..."
+  location         : "Korea, Seoul"
   email            : "devswha@gmail.com"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://devswha.github.io"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://www.facebook.com/sangwoo.ha.12/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/devswha"
@@ -201,7 +195,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul
 
 
 # Plugins (previously gems:)
@@ -234,12 +228,12 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
-resource_archive:
+project_archive:
   type: liquid
-  path: /resource/
+  path: /project/
 category_archive:
   type: liquid
-  path: /categories/
+  path: /posts/
 tag_archive:
   type: liquid
   path: /tags/
@@ -289,7 +283,7 @@ defaults:
       path: ""
       type: projects
     values:
-      layout: single
+      layout: project
       read_time: false
       author_profile: false
       share: false
@@ -301,3 +295,4 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
+    

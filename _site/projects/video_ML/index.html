@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Video based Machine Learning Model - Sangwoo’s DevLog</title>
+<!-- begin _includes/seo.html --><title>Video based Machine Learning Model - AI 친구 만들기 대작전</title>
 <meta name="description" content="In predict the density of injured civilian in RCRS using video-based data, we train the machine learning model using simulation screenshot image sequence. We consider that all frames of video clip are used for training. Therefore, we choose nine frames randomly in images sequence of disaster scenario in RCRS to train the machine learning model and predict the density of the 10th frame which is the next frame of 9th of the nine frames. The machine learning model’s inputs are simulated images created and filtered from Plug-in1 and extract images feature using CNN. Afterwards, the Long-short memory (LSTM) extract sequence image feature from CNN. And fully-connected layer output the number of injured people vectors in each grid cell. The different from image-based predictions is add LSTM layer to sequence learning on video.">
 
 
@@ -21,7 +21,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Sangwoo's DevLog">
+<meta property="og:site_name" content="AI 친구 만들기 대작전">
 <meta property="og:title" content="Video based Machine Learning Model">
 <meta property="og:url" content="http://localhost:4000/projects/video_ML/">
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2024-08-15T13:19:42+09:00">
+  <meta property="article:published_time" content="2024-08-15T16:05:54+09:00">
 
 
 
@@ -71,7 +71,7 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sangwoo's DevLog Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AI 친구 만들기 대작전 Feed">
 
 
 <!-- https://t.co/dKP3o1e -->
@@ -96,7 +96,7 @@
 
   </head>
 
-  <body class="layout--single wide">
+  <body class="layout--project wide">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -117,13 +117,11 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Sangwoo's DevLog
+          AI 친구 만들기 대작전
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/about/">About</a>
-            </li><li class="masthead__menu-item">
-              <a href="/archive/">Archive</a>
+              <a href="/posts/">Posts</a>
             </li><li class="masthead__menu-item">
               <a href="/projects/intro">Project</a>
             </li></ul>
@@ -157,26 +155,11 @@
     
     
       
-
 <nav class="nav__list">
   
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">Toggle menu</label>
   <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Project in progress</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/projects/lostark">LostArk Avartar Creator</a></li>
-          
-        </ul>
-        
-      </li>
     
       <li>
         
@@ -208,11 +191,9 @@
     
   </ul>
 </nav>
-
     
   
   </div>
-
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
@@ -378,25 +359,6 @@ RESULTS_DIR: The path of result to save</p>
 
 
 
-
-
-    
-  <script>
-    var disqus_config = function () {
-      this.page.url = "http://localhost:4000/projects/video_ML/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/projects/video_ML"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
-    };
-    (function() { /* DON'T EDIT BELOW THIS LINE */
-      var d = document, s = d.createElement('script');
-      s.src = 'https://devswha-github-io.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-  
 
 
 

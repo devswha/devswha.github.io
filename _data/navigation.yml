@@ -1,18 +1,11 @@
 # main links
 main:
-  - title: "About"
-    url: /about/
-  - title: "Archive"
-    url: /archive/
+  - title: "Posts"
+    url: /posts/
   - title: "Project"
     url: /projects/intro
 
-
 projects:
-  - title: Project in progress
-    children:
-      - title: "LostArk Avartar Creator"
-        url: /projects/lostark
   - title: RCRS with Deep Learning
     children:
       - title: "RoboCup Rescue Simulation"

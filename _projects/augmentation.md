@@ -1,10 +1,12 @@
 ---
-layout: single
+layout: project
 classes: wide
 title: "Feature Highlight Data Augmentation"
 permalink: /projects/augmentation/
 read_time: true
 toc: false
+sidebar:
+  nav: "projects"
 ---
 In deep learning with image processing, the deep learning model train images according to the feature of images. And the accuracy of deep learning model is affected by whether the model trains the feature of images well. Therefore, this study proposes the data augmentation method to help the model training more about the feature of images within the images for predicting the results well. In RCRS, injured civilians are occurred by fire or collapse of a building. And the rescue teams patrol to find injured civilians.  
 
