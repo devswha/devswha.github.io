@@ -1,0 +1,456 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.5 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Image based Machine Learning Model - Sangwoo’s DevLog</title>
+<meta name="description" content="To predict the density of injured civilian in RCRS using image-based data, we train the machine learning model using simulation screenshot images. We consider that all frames of video clip in disaster situations are independent images. Therefore, we choose one frame randomly in images sequence of a disaster scenario in RCRS to train the machine learning model. The model’s inputs are simulated images created from RCRS. And CNN extracts images features, fully-connected layer output the number of injured people vectors in each grid cell.">
+
+
+  <meta name="author" content="Sangwoo Ha">
+  
+  <meta property="article:author" content="Sangwoo Ha">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sangwoo's DevLog">
+<meta property="og:title" content="Image based Machine Learning Model">
+<meta property="og:url" content="http://localhost:4000/projects/image_ML/">
+
+
+  <meta property="og:description" content="To predict the density of injured civilian in RCRS using image-based data, we train the machine learning model using simulation screenshot images. We consider that all frames of video clip in disaster situations are independent images. Therefore, we choose one frame randomly in images sequence of a disaster scenario in RCRS to train the machine learning model. The model’s inputs are simulated images created from RCRS. And CNN extracts images features, fully-connected layer output the number of injured people vectors in each grid cell.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-08-15T13:19:42+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/projects/image_ML/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sangwoo Ha",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sangwoo's DevLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sangwoo's DevLog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/archive/">Archive</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/intro">Project</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Project in progress</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/projects/lostark">LostArk Avartar Creator</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">RCRS with Deep Learning</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/projects/RCRS/">RoboCup Rescue Simulation</a></li>
+          
+            <li><a href="/projects/create_scenario/">Create the RCRS Scenario</a></li>
+          
+            <li><a href="/projects/scenario_generator/">Scenario Generator</a></li>
+          
+            <li><a href="/projects/image_ML/" class="active">Image-based ML Model</a></li>
+          
+            <li><a href="/projects/video_ML/">Video-based ML Model</a></li>
+          
+            <li><a href="/projects/attention/">Attention Module</a></li>
+          
+            <li><a href="/projects/augmentation/">FH Data Augmentation</a></li>
+          
+            <li><a href="/projects/videos/">Demo Videos</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Image based Machine Learning Model">
+    <meta itemprop="description" content="To predict the density of injured civilian in RCRS using image-based data, we train the machine learning model using simulation screenshot images. We consider that all frames of video clip in disaster situations are independent images. Therefore, we choose one frame randomly in images sequence of a disaster scenario in RCRS to train the machine learning model. The model’s inputs are simulated images created from RCRS. And CNN extracts images features, fully-connected layer output the number of injured people vectors in each grid cell.">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Image based Machine Learning Model
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p style="text-align: justify;">To predict the density of injured civilian in RCRS using image-based data, we train the machine learning model using simulation screenshot images. We consider that all frames of video clip in disaster situations are independent images. Therefore, we choose one frame randomly in images sequence of a disaster scenario in RCRS to train the machine learning model. The model’s inputs are simulated images created from RCRS. And CNN extracts images features, fully-connected layer output the number of injured people vectors in each grid cell.</p>
+
+<p><img src="http://localhost:4000/assets/images/RCRS/Image_ML.png" alt="Robocup Rescue Simulation" class="align-center" /></p>
+
+<p>And our program train the machine learning model as follows:</p>
+<ol>
+  <li>Label the data created Scenario Generator</li>
+  <li>Convert the data labeled in the first step to image data</li>
+  <li>Train the machine learning model with data converted in the second step.</li>
+  <li>Test the machine learning model with machine learning model trained in the third step.</li>
+</ol>
+
+<h2 id="1-software-pre-requisites">1. Software Pre-Requisites</h2>
+<ul>
+  <li>TensorFlow 1.12.0</li>
+  <li>Keras 2.2.4</li>
+</ul>
+
+<h2 id="2-download-project-from-github-and-decompress-rcrs">2. Download project from GitHub and decompress RCRS</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/swhaKo/RCRS_ML_Model.git
+</code></pre></div></div>
+
+<h2 id="2-configuration">2. Configuration</h2>
+<p style="text-align: justify;">In this repository, there is configuration file called <em>config_image.txt</em>. You can modify the number of civilians, the number of initial fire building and the number of data sets. Also you can modifiy the path where datasets are stored.</p>
+
+<h3 id="constant-of-label-the-data">Constant of label the data</h3>
+<p>LIMIT_TIME_STEP: The start point of disaster scenario time step to save image dataset.<br />
+LIMIT_CIVILIAN_HP: The threshold of civilians’ HP point which determine civilian is injured or not
+LABEL_TRAIN_START_MAP_NUM: The map data start number for training to label
+LABEL_TRAIN_END_MAP_NUM: The map data end number for training  to label
+LABEL_TEST_START_MAP_NUM: The map data start number for testing to label
+LABEL_TEST_END_MAP_NUM: The map data end number for testing to label
+LABEL_DATASET_DIR: The path of scenario directory to label</p>
+
+<h3 id="constant-to-convert-the-data">Constant to convert the data</h3>
+<p>CONVERT_TRAIN_START_MAP_NUM: The map data start number for training to convert
+CONVERT_TRAIN_END_MAP_NUM: The map data end number for training to convert
+CONVERT_TEST_START_MAP_NUM: The map data start number for testing to convert
+CONVERT_TEST_END_MAP_NUM: The map data end number for testing to convert
+CONVERT_DATASET_DIR: The path of scenario directory to convert</p>
+
+<h3 id="constant-to-train-and-test-the-ml-model">Constant to train and test the ML model</h3>
+<p>MODEL_TRAIN_NAME: The name of ML model to train
+MODEL_TRAIN_START_MAP_NUM: The map data start number for training
+MODEL_TRAIN_END_MAP_NUM: The map data end number for training
+MODEL_TEST_NAME: The name of ML model to test
+MODEL_TEST_START_MAP_NUM: The map data start number for testing
+MODEL_TEST_END_MAP_NUM: The map data end number for testing
+MODEL_DATASET_DIR: The path of scenario directory to train and test
+MODELS_DIR: The path of machine learning model to save
+RESULTS_DIR: The path of result to save</p>
+
+<h2 id="3-label-the-density-of-injured-civilians-to-scenario">3. Label the density of injured civilians to scenario</h2>
+<p style="text-align: justify;">We use the machine learning model to predict the location of the injured. And predict the exact location of injured civilians requires considerable computational resources and complexity, so that we divide the simulation map into grid and predict the density of the injured people in each grid cell. This can significantly shorten computational resources, complexity and the time required for training. Furthermore, we expected that the accuracy of the prediction of the injured civilians location will also be increased.</p>
+
+<p><img src="http://localhost:4000/assets/images/RCRS/Label.png" alt="Robocup Rescue Simulation" class="align-center" /></p>
+
+<p>And our program can automatically label the scenario follow this commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 Labeler_train.py <span class="o">[</span>Map name] <span class="o">[</span>Row of grid] <span class="o">[</span>Column of grid]
+<span class="nv">$ </span>python3 Labeler_test.py <span class="o">[</span>Map name] <span class="o">[</span>Row of grid] <span class="o">[</span>Column of grid]
+</code></pre></div></div>
+
+<h2 id="4-convert-the-scenario-to-image">4. Convert the scenario to image</h2>
+<p style="text-align: justify;">To train the machine learning model, we convert the scenario data which labeded in the step three. Our program automatically convert the scenario data to images using commands as below:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 Converter_train_image.py <span class="o">[</span>Map name] <span class="o">[</span>Row of grid] <span class="o">[</span>Column of grid]
+<span class="nv">$ </span>python3 Converter_test_image.py <span class="o">[</span>Map Name] <span class="o">[</span>Row of grid] <span class="o">[</span>Column of grid]
+</code></pre></div></div>
+
+<h2 id="5-train-the-machine-learning-model-to-predict">5. Train the machine learning model to predict</h2>
+<p style="text-align: justify;">Finally, you train the machine learning model. The speed of training the machine learning model is vary depending on the number of parameters of the model and your GPU. Before training the ML model, you must specify MODEL_TRAIN/TEST_NAME in the configuration file. The name of the ML model is a specified name depend on the type of CNN and attention module and we offer several specific names of the models. However, if you enter a non-specified model, you will get an error. The specified name of the model is shown in <em>model_list.txt</em> and the name of model should figure to <em>CNN type of ML model_Attention Module</em>. The <em>Attention Module</em> is the option you can add the module or not. The <em>CNN type of ML model</em>, we developed the <a href="https://arxiv.org/abs/1512.03385">ResNet</a>, <a href="https://arxiv.org/abs/1611.05431">ResNeXt</a>, <a href="https://arxiv.org/abs/1512.00567">InceptionV3</a>, <a href="https://arxiv.org/abs/1602.07261">InceptionResNetV2</a>, <a href="https://arxiv.org/abs/1704.04861">MobileNet</a>, <a href="https://arxiv.org/abs/1608.06993">DenseNet</a> and <a href="https://arxiv.org/abs/1610.02357">Xception</a> CNN based machine learning model. And the attention module, we developed the <a href="http://openaccess.thecvf.com/content_cvpr_2018/html/Hu_Squeeze-and-Excitation_Networks_CVPR_2018_paper.html">Squeeze and excitation (SE)</a>, <a href="http://openaccess.thecvf.com/content_ECCV_2018/html/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.html">Convolutional Block Attention Module (CBAM)</a> and Grid Convolutional Block Attention Module (GCBAM). If you want to see more detail about attention module, please refer <a href="http://localhost:4000/resources/Attention/">this page</a>. Therefore, you can set the name of ML model refer below list:</p>
+
+<ul>
+  <li>CNN type of ML model
+    <ul>
+      <li>ResNet_50</li>
+      <li>ResNet_101</li>
+      <li>ResNet_152</li>
+      <li>ResNeXt_50</li>
+      <li>ResNeXt_101</li>
+      <li>Inception_v3</li>
+      <li>InceptionResNet_v2</li>
+      <li>MobileNet</li>
+      <li>DenseNet_121</li>
+      <li>DenseNet_169</li>
+      <li>DenseNet_201</li>
+      <li>DenseNet_264</li>
+      <li>Xception</li>
+    </ul>
+  </li>
+  <li>Attention Module
+    <ul>
+      <li>SE</li>
+      <li>CBAM</li>
+      <li>GCBAM</li>
+    </ul>
+  </li>
+</ul>
+
+<p style="text-align: justify;">For example, if you want to create the machine learning model with InceptionResNetV2 CNN only to train, your MODEL_TRAIN_NAME of configuration file should <em>InceptionResNet_v2</em>. And if you want to create the machine learning model with InceptionResNetV2 CNN and CBAM attention module to train, your MODEL_TRAIN_NAME of configuration file should <em>InceptionResNet_v2_CBAM</em>. After input the model name, you can train your ML model using the command as below:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 Model_train_image.py <span class="o">[</span>Map name] <span class="o">[</span>Row of grid] <span class="o">[</span>Column of grid]
+<span class="nv">$ </span>python3 Model_train_image.py <span class="o">[</span>Map Name] <span class="o">[</span>Row of grid] <span class="o">[</span>Column of grid]
+</code></pre></div></div>
+
+<h2 id="6-download-link">6. Download Link</h2>
+<p><a href="https://github.com/swhaKo/RCRS_ML_Model">Image-based Machine Learning Model with RCRS GitHub Page</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/projects/create_scenario/" class="pagination--pager" title="Create the RCRS Scenario
+">Previous</a>
+    
+    
+      <a href="/projects/" class="pagination--pager" title="projects
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.facebook.com/sangwoo.ha.12/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://github.com/devswha" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Sangwoo Ha. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/projects/image_ML/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/projects/image_ML"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://devswha-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

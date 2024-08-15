@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-15T13:19:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sangwoo’s DevLog</title><subtitle>devswha blog</subtitle><author><name>Sangwoo Ha</name><email>devswha@gmail.com</email></author><entry><title type="html">YOLO</title><link href="http://localhost:4000/review/YOLO/" rel="alternate" type="text/html" title="YOLO" /><published>2021-12-29T00:00:00+09:00</published><updated>2021-12-29T00:00:00+09:00</updated><id>http://localhost:4000/review/YOLO</id><content type="html" xml:base="http://localhost:4000/review/YOLO/"><![CDATA[<p>will update soon</p>]]></content><author><name>Sangwoo Ha</name><email>devswha@gmail.com</email></author><category term="review" /><summary type="html"><![CDATA[test page]]></summary></entry><entry><title type="html">Segmentation using Unet with Keras and Jupyter Notebook</title><link href="http://localhost:4000/review/keras-unet/" rel="alternate" type="text/html" title="Segmentation using Unet with Keras and Jupyter Notebook" /><published>2021-09-29T00:00:00+09:00</published><updated>2019-09-29T00:00:00+09:00</updated><id>http://localhost:4000/review/keras-unet</id><content type="html" xml:base="http://localhost:4000/review/keras-unet/"><![CDATA[<blockquote>
+  <p>The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by <a href="http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/">U-Net: Convolutional Networks for Biomedical Image Segmentation</a>. And I mainly referred to the images and codes of these github: <a href="https://github.com/zhixuhao/unet">zhixuhao github</a> and <a href="https://github.com/ugent-korea/pytorch-unet-segmentation">ugent-korea github</a></p>
+</blockquote>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>The author of paper propose a simple and effective end-to-end image segmentation network architecture for medical images.
+The proposed network, called U-net, has main three factors for well-training.</p>
+<ul>
+  <li>U-shaped network structure with two configurations: Contracting and Expanding path</li>
+  <li>Training more faster than sliding-windows: Patch units and Overlap-tile</li>
+  <li>Data augmentation: Elastic deformation and Weight cross entropy</li>
+</ul>
+
+<h2 id="dataset">Dataset</h2>
+
+<p>The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the Drosophila first instar larva ventral nerve cord (VNC), which is dowloaded from <a href="http://brainiac2.mit.edu/isbi_challenge/home">ISBI Challenge: Segmentation of of neural structures in EM stacks</a></p>
+
+<p><img src="http://localhost:4000/assets/images/keras-Unet/ISBI.gif" alt="ISBI" class="align-center" /></p>
+
+<ul>
+  <li>Black and white segmentation of membrane and cell with EM(Electron Microscopic) image.</li>
+  <li>The data set is a large size of image and few so the data augmentation is needed.</li>
+  <li>The data set contains 30 images of size 512x512 for the train, train-labels and test.</li>
+  <li>There is no images for test-labels for the ISBI competition.</li>
+  <li>If you want to get the evaluation metrics of competition, you should split part of the train data set for testing.</li>
+</ul>
+
+<h2 id="overlap-tile">Overlap-tile</h2>
+
+<p><img src="http://localhost:4000/assets/images/keras-Unet/sliding_window.png" alt="sliding_window" class="align-center" /></p>
+
+<p><img src="http://localhost:4000/assets/images/keras-Unet/patch.png" alt="patch" class="align-center" /></p>
+
+<ul>
+  <li>Patch method has low overlap ratio so that the speed of detection can be improvement.</li>
+  <li>However, as the wide size of patch detect image at once, the performance of context is good but the performance of localization is lower.</li>
+  <li>In this paper, the U-net architecture and overlap-tile methods were proposed to solve this localization problem.</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/images/keras-Unet/overlap_tile.png" alt="overlap_tile" class="align-center" /></p>
+
+<p>Simple. Because the EM image is large, sometimes the model of detection input is larger than the patch size (yellow). If so, mirror and fill in the patch area with the empty part.</p>
+
+<h2 id="data-augmenation">Data Augmenation</h2>
+
+<p>We preprocessed the images for data augmentation. Following preprocessing are :</p>
+<ul>
+  <li>Flip</li>
+  <li>Gaussian noise</li>
+  <li>Uniform noise</li>
+  <li>Brightness</li>
+  <li>Elastic deformation</li>
+  <li>Crop</li>
+  <li>Pad</li>
+</ul>
+
+<p>You can easily to understand refer this <a href="https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/README.md#preprocessing">page</a></p>
+
+<p align="center"><img width="250" height="250" src="/assets/images/keras-Unet/readme_images/original.png" /> <br />Original Image</p>
+<table border="0" width="99%">
+	<tbody> 
+		<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Image</strong></td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Flip  </td> 
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_vert" /> <br />Vertical  </td> 
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_hori" />  <br />Horizontal</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_both" /> <br />Both</td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Gaussian noise </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_10" /> <br />Standard Deviation: 10</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_50" /> <br />Standard Deviation: 50</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_100" /> <br />Standard Deviation: 100</td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Uniform noise </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/uniform_10" /> <br />Intensity: 10 </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/un_50" /> <br />Intensity: 50</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/un_100" /> <br />Intensity: 100</td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Brightness </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/bright_10" /> <br />Intensity: 10</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/br_50.png" /> <br />Intensity: 20</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/br_100.png" /> <br />Intensity: 30</td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Elastic deformation </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_10.png" /> <br />Random Deformation: 1</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_34.png" /> <br />Random Deformation: 2</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_50.png" /> <br />Random Deformation: 3</td>
+		</tr>
+	</tbody>
+</table>
+<h3 id="crop-and-pad">Crop and Pad</h3>
+<table border="0" width="99%">
+	<tbody> 
+    	<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Crop</strong></td>
+	    </tr>
+		<tr>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_lb" /> <br />  Left Bottom </td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_lt" /> <br /> Left Top</td> 
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_rb" /> <br /> Right Bottom</td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_rt" /> <br /> Right Top</td> 
+		</tr>
+	</tbody>
+</table>
+
+<p>Padding process is compulsory after the cropping process as the image has to fit the input size of the U-Net model.</p>
+
+<p>In terms of the padding method, <strong>symmetric padding</strong> was done in which the pad is the reflection of the vector mirrored along the edge of the array. We selected the symmetric padding over several other padding options because it reduces the loss the most.</p>
+
+<p>To help with observation, a <span style="color:black; background-color:yellow;">yellow border</span> is added around the original image: outside the border indicates symmetric padding whereas inside indicates the original image.</p>
+
+<table border="0" width="99%">
+	<tbody> 
+    	<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Pad</strong></td>
+	    </tr>
+		<tr>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_lb.PNG" /> <br />  Left Bottom </td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_lt.PNG" /> <br /> Left Top</td> 
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_rb.PNG" /> <br /> Right bottom</td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_rt.PNG" /> <br /> Right Top</td> 
+		</tr>
+	</tbody>
+</table>
+
+<h2 id="network-architecture">Network Architecture</h2>
+
+<p align="center">
+    <img src="/assets/images/keras-Unet/unet.png" width="70%" height="70%" />
+</p>
+
+<h3 id="contracting-path-fully-convolution">Contracting Path (Fully Convolution)</h3>
+<ul>
+  <li>Typical convolutional network.</li>
+  <li>3x3 convolution layer with max-pooling and drop out</li>
+  <li>Extracts the image feature accurately, but reduces the size of the image feature map.</li>
+</ul>
+
+<h3 id="expanding-path-deconvolution">Expanding Path (Deconvolution)</h3>
+<ul>
+  <li>Output segmentation map by upsampling the feature map</li>
+  <li>2x2 up-convolution and 3x3 convolution layer with concatenation</li>
+  <li>The disadvantage of upsampling process is that the localization information in the image feature map will be lost.</li>
+  <li>Therefore, localization information less lost by concatenating the feature map after up-conv with the same level feature map.</li>
+  <li>Last one is 1x1 convolution mapping</li>
+</ul>
+
+<h2 id="result">Result</h2>
+
+<p align="center">
+    <img src="/assets/images/keras-Unet/result.gif" width="100%" height="100%" />
+</p>
+
+<h2 id="usage">Usage</h2>
+<p>When you download my code, your directory tree should consist of the following</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>keras-Unet/
+├── data
+    ├── test-volume.tif
+    ├── train-labels.tif
+    └── train-volume.tif
+├── images
+├── jupyter.ipynb
+├── augmentation.py
+├── model.py
+├── preprocessing.py
+├── README.md
+├── train.py
+├── utills.py
+└── requirement.txt
+</code></pre></div></div>
+<p>You can change the root directory of data to change the <em>data_path</em> in pre-processing.py and augmentation.py</p>
+
+<p>However, at least three original competition data (test-volume, train-labels, train-volume) should put in the <em>data_path</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 augmentation.py
+<span class="nv">$ </span>python3 preprocessing.py
+<span class="nv">$ </span>python3 train.py
+</code></pre></div></div>
+
+<p>Easly to use my program just run augmentation-preprocessing-train step.
+You can get the prediction.tif for the result.</p>
+
+<p>And you can just run the <strong>jupyter.ipynb</strong> with <a href="https://jupyter.org/">jupyter notebook</a> to see how U-net works.</p>
+
+<h2 id="github-link">Github link</h2>
+<p><a href="https://github.com/devswha/keras-Unet">Segmentation using Unet with Keras and Jupyter Notebook</a></p>]]></content><author><name>Sangwoo Ha</name><email>devswha@gmail.com</email></author><category term="review" /><summary type="html"><![CDATA[The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook]]></summary></entry></feed>

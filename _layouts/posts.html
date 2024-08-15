@@ -1,0 +1,19 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<div class="page-navigation">
+  {% if page.previous.url %}
+    <a class="prev" href="{{page.previous.url | relative_url}}">&larr; {{page.previous.title}}</a>
+  {% endif %}
+
+  {% if page.next.url %}
+    <a class="next" href="{{page.next.url | relative_url}}">{{page.next.title}} &rarr;</a>
+  {% endif %}
+</div>
+
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}

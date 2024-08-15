@@ -1,0 +1,527 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.5 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Segmentation using Unet with Keras and Jupyter Notebook - Sangwoo’s DevLog</title>
+<meta name="description" content="The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook">
+
+
+  <meta name="author" content="Sangwoo Ha">
+  
+  <meta property="article:author" content="Sangwoo Ha">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sangwoo's DevLog">
+<meta property="og:title" content="Segmentation using Unet with Keras and Jupyter Notebook">
+<meta property="og:url" content="http://localhost:4000/review/keras-unet/">
+
+
+  <meta property="og:description" content="The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/keras-Unet/unet.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2019-09-29T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/review/keras-unet/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sangwoo Ha",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sangwoo's DevLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Sangwoo's DevLog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/archive/">Archive</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/intro">Project</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Segmentation using Unet with Keras and Jupyter Notebook">
+    <meta itemprop="description" content="The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook">
+    <meta itemprop="datePublished" content="September 29, 2021">
+    <meta itemprop="dateModified" content="September 29, 2019">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Segmentation using Unet with Keras and Jupyter Notebook
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <blockquote>
+  <p>The implementation of biomedical image segmentation with the use of U-Net model with Keras and Jupyter Notebook. The architecture was inspired by <a href="http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/">U-Net: Convolutional Networks for Biomedical Image Segmentation</a>. And I mainly referred to the images and codes of these github: <a href="https://github.com/zhixuhao/unet">zhixuhao github</a> and <a href="https://github.com/ugent-korea/pytorch-unet-segmentation">ugent-korea github</a></p>
+</blockquote>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>The author of paper propose a simple and effective end-to-end image segmentation network architecture for medical images.
+The proposed network, called U-net, has main three factors for well-training.</p>
+<ul>
+  <li>U-shaped network structure with two configurations: Contracting and Expanding path</li>
+  <li>Training more faster than sliding-windows: Patch units and Overlap-tile</li>
+  <li>Data augmentation: Elastic deformation and Weight cross entropy</li>
+</ul>
+
+<h2 id="dataset">Dataset</h2>
+
+<p>The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the Drosophila first instar larva ventral nerve cord (VNC), which is dowloaded from <a href="http://brainiac2.mit.edu/isbi_challenge/home">ISBI Challenge: Segmentation of of neural structures in EM stacks</a></p>
+
+<p><img src="http://localhost:4000/assets/images/keras-Unet/ISBI.gif" alt="ISBI" class="align-center" /></p>
+
+<ul>
+  <li>Black and white segmentation of membrane and cell with EM(Electron Microscopic) image.</li>
+  <li>The data set is a large size of image and few so the data augmentation is needed.</li>
+  <li>The data set contains 30 images of size 512x512 for the train, train-labels and test.</li>
+  <li>There is no images for test-labels for the ISBI competition.</li>
+  <li>If you want to get the evaluation metrics of competition, you should split part of the train data set for testing.</li>
+</ul>
+
+<h2 id="overlap-tile">Overlap-tile</h2>
+
+<p><img src="http://localhost:4000/assets/images/keras-Unet/sliding_window.png" alt="sliding_window" class="align-center" /></p>
+
+<p><img src="http://localhost:4000/assets/images/keras-Unet/patch.png" alt="patch" class="align-center" /></p>
+
+<ul>
+  <li>Patch method has low overlap ratio so that the speed of detection can be improvement.</li>
+  <li>However, as the wide size of patch detect image at once, the performance of context is good but the performance of localization is lower.</li>
+  <li>In this paper, the U-net architecture and overlap-tile methods were proposed to solve this localization problem.</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/images/keras-Unet/overlap_tile.png" alt="overlap_tile" class="align-center" /></p>
+
+<p>Simple. Because the EM image is large, sometimes the model of detection input is larger than the patch size (yellow). If so, mirror and fill in the patch area with the empty part.</p>
+
+<h2 id="data-augmenation">Data Augmenation</h2>
+
+<p>We preprocessed the images for data augmentation. Following preprocessing are :</p>
+<ul>
+  <li>Flip</li>
+  <li>Gaussian noise</li>
+  <li>Uniform noise</li>
+  <li>Brightness</li>
+  <li>Elastic deformation</li>
+  <li>Crop</li>
+  <li>Pad</li>
+</ul>
+
+<p>You can easily to understand refer this <a href="https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/README.md#preprocessing">page</a></p>
+
+<p align="center"><img width="250" height="250" src="/assets/images/keras-Unet/readme_images/original.png" /> <br />Original Image</p>
+<table border="0" width="99%">
+	<tbody> 
+		<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Image</strong></td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Flip  </td> 
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_vert" /> <br />Vertical  </td> 
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_hori" />  <br />Horizontal</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/flip_both" /> <br />Both</td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Gaussian noise </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_10" /> <br />Standard Deviation: 10</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_50" /> <br />Standard Deviation: 50</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/gn_100" /> <br />Standard Deviation: 100</td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Uniform noise </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/uniform_10" /> <br />Intensity: 10 </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/un_50" /> <br />Intensity: 50</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/un_100" /> <br />Intensity: 100</td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Brightness </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/bright_10" /> <br />Intensity: 10</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/br_50.png" /> <br />Intensity: 20</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/br_100.png" /> <br />Intensity: 30</td>
+		</tr>
+		<tr>
+			<td width="19%" align="center"> Elastic deformation </td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_10.png" /> <br />Random Deformation: 1</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_34.png" /> <br />Random Deformation: 2</td>
+			<td width="27%" align="center"> <img src="/assets/images/keras-Unet/readme_images/ed_50.png" /> <br />Random Deformation: 3</td>
+		</tr>
+	</tbody>
+</table>
+<h3 id="crop-and-pad">Crop and Pad</h3>
+<table border="0" width="99%">
+	<tbody> 
+    	<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Crop</strong></td>
+	    </tr>
+		<tr>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_lb" /> <br />  Left Bottom </td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_lt" /> <br /> Left Top</td> 
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_rb" /> <br /> Right Bottom</td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/c_rt" /> <br /> Right Top</td> 
+		</tr>
+	</tbody>
+</table>
+
+<p>Padding process is compulsory after the cropping process as the image has to fit the input size of the U-Net model.</p>
+
+<p>In terms of the padding method, <strong>symmetric padding</strong> was done in which the pad is the reflection of the vector mirrored along the edge of the array. We selected the symmetric padding over several other padding options because it reduces the loss the most.</p>
+
+<p>To help with observation, a <span style="color:black; background-color:yellow;">yellow border</span> is added around the original image: outside the border indicates symmetric padding whereas inside indicates the original image.</p>
+
+<table border="0" width="99%">
+	<tbody> 
+    	<tr>		
+			<td width="99%" align="center" colspan="4"><strong>Pad</strong></td>
+	    </tr>
+		<tr>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_lb.PNG" /> <br />  Left Bottom </td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_lt.PNG" /> <br /> Left Top</td> 
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_rb.PNG" /> <br /> Right bottom</td>
+			<td width="25%" align="center"> <img src="/assets/images/keras-Unet/readme_images/p_rt.PNG" /> <br /> Right Top</td> 
+		</tr>
+	</tbody>
+</table>
+
+<h2 id="network-architecture">Network Architecture</h2>
+
+<p align="center">
+    <img src="/assets/images/keras-Unet/unet.png" width="70%" height="70%" />
+</p>
+
+<h3 id="contracting-path-fully-convolution">Contracting Path (Fully Convolution)</h3>
+<ul>
+  <li>Typical convolutional network.</li>
+  <li>3x3 convolution layer with max-pooling and drop out</li>
+  <li>Extracts the image feature accurately, but reduces the size of the image feature map.</li>
+</ul>
+
+<h3 id="expanding-path-deconvolution">Expanding Path (Deconvolution)</h3>
+<ul>
+  <li>Output segmentation map by upsampling the feature map</li>
+  <li>2x2 up-convolution and 3x3 convolution layer with concatenation</li>
+  <li>The disadvantage of upsampling process is that the localization information in the image feature map will be lost.</li>
+  <li>Therefore, localization information less lost by concatenating the feature map after up-conv with the same level feature map.</li>
+  <li>Last one is 1x1 convolution mapping</li>
+</ul>
+
+<h2 id="result">Result</h2>
+
+<p align="center">
+    <img src="/assets/images/keras-Unet/result.gif" width="100%" height="100%" />
+</p>
+
+<h2 id="usage">Usage</h2>
+<p>When you download my code, your directory tree should consist of the following</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>keras-Unet/
+├── data
+    ├── test-volume.tif
+    ├── train-labels.tif
+    └── train-volume.tif
+├── images
+├── jupyter.ipynb
+├── augmentation.py
+├── model.py
+├── preprocessing.py
+├── README.md
+├── train.py
+├── utills.py
+└── requirement.txt
+</code></pre></div></div>
+<p>You can change the root directory of data to change the <em>data_path</em> in pre-processing.py and augmentation.py</p>
+
+<p>However, at least three original competition data (test-volume, train-labels, train-volume) should put in the <em>data_path</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 augmentation.py
+<span class="nv">$ </span>python3 preprocessing.py
+<span class="nv">$ </span>python3 train.py
+</code></pre></div></div>
+
+<p>Easly to use my program just run augmentation-preprocessing-train step.
+You can get the prediction.tif for the result.</p>
+
+<p>And you can just run the <strong>jupyter.ipynb</strong> with <a href="https://jupyter.org/">jupyter notebook</a> to see how U-net works.</p>
+
+<h2 id="github-link">Github link</h2>
+<p><a href="https://github.com/devswha/keras-Unet">Segmentation using Unet with Keras and Jupyter Notebook</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#review" class="page__taxonomy-item p-category" rel="tag">review</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-09-29">September 29, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Segmentation+using+Unet+with+Keras+and+Jupyter+Notebook%20http%3A%2F%2Flocalhost%3A4000%2Freview%2Fkeras-unet%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Freview%2Fkeras-unet%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Freview%2Fkeras-unet%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/review/YOLO/" class="pagination--pager" title="YOLO
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/review/YOLO/" rel="permalink">YOLO
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">test page
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.facebook.com/sangwoo.ha.12/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://github.com/devswha" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Sangwoo Ha. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/review/keras-unet/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/review/keras-unet"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://devswha-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
