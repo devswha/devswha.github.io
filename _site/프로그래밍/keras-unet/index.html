@@ -148,195 +148,6 @@
 
 <div id="main" role="main">
   
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person" class="h-card">
-
-  
-    <div class="author__avatar">
-      <a href="http://localhost:4000/">
-        <img src="/assets/images/profile.jpg" alt="Sangwoo Ha" itemprop="image" class="u-photo">
-      </a>
-    </div>
-  
-
-  <div class="author__content">
-    <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Sangwoo Ha</a>
-    </h3>
-    
-      <div class="author__bio p-note" itemprop="description">
-        <p>언젠간 AI랑 친구가 될 수 있을거야…</p>
-
-      </div>
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea, Seoul</span>
-        </li>
-      
-
-      
-        
-          
-            <li><a href="https://github.com/devswha" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
-          
-        
-      
-
-      
-
-      
-        <li>
-          <a href="mailto:devswha@gmail.com" rel="me" class="u-email">
-            <meta itemprop="email" content="devswha@gmail.com" />
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
-          </a>
-        </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-  
-  <!-- 
-
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle menu</label>
-  <ul class="nav__items">
-    
-  </ul>
-</nav> -->
-
-<nav class="nav__list">
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle menu</label>
-  <ul class="nav__items" id="category_tag_menu">
-      <li>
-        <span class="nav__sub-title" v-on:click='togglec()'>📂 전체 글 수 2 개</span>
-      </li>
-      <li>
-        <span class="nav__sub-title" v-on:click='togglec()'><a href="/categories/논문뿌셔먹기">🍽️ 논문뿌셔먹기 (1)</a></span>
-        
-        
-          
-          <ul v-show="flag_c">
-            
-              
-            
-          </ul>
-        
-          
-          <ul v-show="flag_c">
-            
-              
-            
-          </ul>
-        
-          
-          <ul v-show="flag_c">
-            
-              
-            
-          </ul>
-        
-          
-          <ul v-show="flag_c">
-            
-              
-            
-          </ul>
-        
-          
-          <ul v-show="flag_c">
-            
-              
-            
-          </ul>
-        
-
-        <span class="nav__sub-title" v-on:click='togglec()'><a href="/categories/프로그래밍">💻 구현 / 프로그래밍 (1)</a></span>
-        
-        <!-- <span class="nav__sub-title" v-on:click='togglet()'>tags</span>
-        <ul v-show="flag_t">
-        
-          
-          
-
-            
-              
-                
-                  <li><a href="/tags/#unet" class="">Unet (1)</a></li>
-                
-              
-            
-            
-        </ul> -->
-      </li>
-  </ul>
-</nav>
-  </div>
-
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Segmentation using Unet with Keras and Jupyter Notebook">
@@ -592,7 +403,18 @@ You can get the prediction.tif for the result.</p>
         
       </footer>
 
-      
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Segmentation+using+Unet+with+Keras+and+Jupyter+Notebook%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2594%2584%25EB%25A1%259C%25EA%25B7%25B8%25EB%259E%2598%25EB%25B0%258D%2Fkeras-unet%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2594%2584%25EB%25A1%259C%25EA%25B7%25B8%25EB%259E%2598%25EB%25B0%258D%2Fkeras-unet%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2594%2584%25EB%25A1%259C%25EA%25B7%25B8%25EB%259E%2598%25EB%25B0%258D%2Fkeras-unet%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
 
       
   <nav class="pagination">
@@ -615,6 +437,35 @@ You can get the prediction.tif for the result.</p>
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%81%B0-%EC%88%98%EC%9D%98-%EB%B2%95%EC%B9%99/" rel="permalink">큰 수의 법칙
+</a>
+      
+    </h2>
+    
+    <p class="page__meta">
+      
+        <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2024-08-17">2024년 08월 17일</time>&emsp;
+      
+    </p>
+    
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔔 문제
+
+</p>
+  </article>
+</div>
         
           
 
@@ -695,6 +546,25 @@ You can get the prediction.tif for the result.</p>
 
 
 
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/keras-unet/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/keras-unet"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://devswha-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
 
 
 

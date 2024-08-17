@@ -9,6 +9,11 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/%EB%85%BC%EB%AC%B8%EB%BF%8C%EC%85%94%EB%A8%B9%EA%B8%B0/YOLO/",
         "teaser":null},{
+        "title": "큰 수의 법칙",
+        "excerpt":"🔔 문제 ‘큰 수의 법칙’은 일반적으로 통계 분야에서 다루어지는 내용이지만 동빈이는 본인만의 방식으로 다르게 사용하고 있다. 동빈이의 큰 수의 법칙은 다양한 수로 이루어진 배열이 있을 때 주어진 수들을 M번 더하여 가장 큰 수를 만드는 법칙이다. 단, 배열의 특정한 인덱스(번호)에 해당하는 수가 연속해서 K번을 초과하여 더해질 수 없는 것이 이 법칙의...","categories": ["알고리즘"],
+        "tags": ["그리디 알고리즘"],
+        "url": "http://localhost:4000/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%81%B0-%EC%88%98%EC%9D%98-%EB%B2%95%EC%B9%99/",
+        "teaser":null},{
         "title": "Attention Module",
         "excerpt":"Apart from the CNN model of depth, width, and cardinality factors, we investigate a different aspect of the CNN architecture design, attention. The significance of attention has been studied extensively in the previous literature. Our goal is to increase the focus image feature power of CNN by using attention mechanism:...","categories": [],
         "tags": [],
